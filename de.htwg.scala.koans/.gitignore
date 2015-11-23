@@ -22,7 +22,7 @@ target/
 /build/
 
 # sbt
-.cache
+.cache*
 .history
 .lib/
 dist/*
