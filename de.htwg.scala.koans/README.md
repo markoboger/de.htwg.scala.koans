@@ -1,0 +1,1 @@
+# Scala Koans for Lectures at HTWG
