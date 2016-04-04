@@ -16,13 +16,12 @@ class AboutLists extends KoanSuite {
 
   koan("Lists are easily created") {
     val a = List(1, 2, 3)
-    a should equal(List(1,2,3))
+    a should equal(List(1, 2, 3))
   }
 
   koan("Eq tests identity (same object)") {
     val a = List(1, 2, 3)
     val b = List(1, 2, 3)
-
 
     (a eq b) should be(false)
   }
@@ -38,7 +37,7 @@ class AboutLists extends KoanSuite {
   koan("Lists can be accessed via head and tail") {
     val a = List(1, 2, 3)
     a.head should equal(1)
-    a.tail should equal(List(2,3))
+    a.tail should equal(List(2, 3))
   }
 
   koan("Lists can accessed at random") {
@@ -73,18 +72,18 @@ class AboutLists extends KoanSuite {
     a.toString should equal("List(1, 3, 5, 7, 9)")
 
     // map a function to double the numbers over the list
-    a.map {v => v * 2} should equal(List(2, 6, 10, 14, 18))
+    a.map { v => v * 2 } should equal(List(2, 6, 10, 14, 18))
 
     // filter out any values divisible by 3 in the list
-    a.filter {v => v % 3 == 0} should equal(List(3, 9))
+    a.filter { v => v % 3 == 0 } should equal(List(3, 9))
   }
 
   koan("Functions over lists can use _ as shorthand") {
     val a = List(1, 2, 3)
 
-    a.map {_ * 2} should equal(List(2, 4, 6))
+    a.map { _ * 2 } should equal(List(2, 4, 6))
 
-    a.filter {_ % 2 == 0} should equal(List(2))
+    a.filter { _ % 2 == 0 } should equal(List(2))
   }
 
   koan("Functions over lists can use () instead of {}") {
@@ -99,7 +98,6 @@ class AboutLists extends KoanSuite {
     a.reduceLeft(_ + _) should equal(16)
     a.reduceLeft(_ * _) should equal(105)
   }
-
 
   koan("Foldleft is like reduce, but with an explicit starting value") {
     val a = List(1, 3, 5, 7)
@@ -126,6 +124,5 @@ class AboutLists extends KoanSuite {
     b.tail should be(List(3))
     c.tail should be(Nil)
   }
-
 
 }
