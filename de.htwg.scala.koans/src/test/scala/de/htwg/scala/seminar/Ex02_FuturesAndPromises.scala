@@ -19,44 +19,35 @@ class Ex02_FuturesAndPromises extends KoanSuite {
       case result => result should be("future result")
     }
 
-    Await.result(future, 1 seconds)
+    Await.ready(future, 1 seconds)
 
   }
 
 
 
   koan("exceptions can be handled by registering a callback with \"onFailure\"") {
-    try {
-      val future: Future[String] = Future {
-        throw new Exception("an exception")
-      }
-
-      future onFailure {
-        case ex => ex.getMessage should be("an exception")
-      }
-
-      Await.result(future, 1 seconds)
-    } catch {
-      case _ =>
+    val future: Future[String] = Future {
+      throw new Exception("an exception")
     }
+
+    future onFailure {
+      case ex => ex.getMessage should be("an exception")
+    }
+
+    Await.ready(future, 1 seconds)
   }
 
   koan("both cases can be handled with \"onComplete\"") {
-    try {
-      val future: Future[String] = Future {
-        "not failing"
-      }
-
-      future onComplete {
-        case Success(result) => result should be("not failing")
-        case Failure(_) => println("try to get this printed to the console")
-      }
-
-      Await.result(future, 1 seconds)
-    } catch {
-      case _ =>
+    val future: Future[String] = Future {
+      "not failing"
     }
 
+    future onComplete {
+      case Success(result) => result should be("not failing")
+      case Failure(_) => println("try to get this printed to the console")
+    }
+
+    Await.ready(future, 1 seconds)
   }
 
 
@@ -102,7 +93,7 @@ class Ex02_FuturesAndPromises extends KoanSuite {
       case number => number should be(3)
     }
 
-    Await.result(future3, 1 seconds)
+    Await.ready(future3, 1 seconds)
 
   }
 
@@ -116,28 +107,24 @@ class Ex02_FuturesAndPromises extends KoanSuite {
 
     promise success (42)
 
-    Await.result(future, 1 seconds)
+    Await.ready(future, 1 seconds)
 
   }
 
   koan("a promise can be failed with \"failure\"") {
-    try {
-      val promise = Promise[Int]()
-      val future = promise.future
+    val promise = Promise[Int]()
+    val future = promise.future
 
 
-      future recover {
-        case ex => ex.getMessage should be("promise failed"); 42
-      } onSuccess {
-        case number => number should be(42)
-      }
-
-      promise failure (new Exception("promise failed"))
-
-      Await.result(future, 1 seconds)
-
-    } catch {
-      case _ =>
+    future recover {
+      case ex => ex.getMessage should be("promise failed"); 42
+    } onSuccess {
+      case number => number should be(42)
     }
+
+    promise failure (new Exception("promise failed"))
+
+    Await.ready(future, 1 seconds)
+
   }
 }
