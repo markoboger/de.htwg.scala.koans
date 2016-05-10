@@ -25,7 +25,7 @@ class Ex06_AlgebraicStructures extends KoanSuite{
     val n3 = r"8/18"
     val n4 = n3.toString
 
-    n4 should be("4/9")
+    n4 should be(r"4/9")
   }
 
 
