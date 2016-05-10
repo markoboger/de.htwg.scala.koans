@@ -14,7 +14,7 @@ import spire.syntax.literals.si._
   */
 class Ex06_AlgebraicStructures extends KoanSuite{
 
-/*
+
   koan("A rational number is precise") {
     val n1 = r"1/3"
     val n2 = 1/3
@@ -36,7 +36,7 @@ class Ex06_AlgebraicStructures extends KoanSuite{
     val n6 = x16"17"
     n6.equals(23) should be (true)
   }
-*/
+
 
   koan("ditibutive law"){
     3 * (2 + 4) == 3*2 + 3*4 should be (true)
@@ -68,40 +68,37 @@ class Ex06_AlgebraicStructures extends KoanSuite{
 
     AlgebraicStructure.OwnStructure.op(4,AlgebraicStructure.OwnStructure.id) should be (4)
 
+    AlgebraicStructure.OwnStructure.inverse(5) should be(-5)
+
     AlgebraicStructure.OwnStructure.op(4, AlgebraicStructure.OwnStructure.inverse(4)) should be (AlgebraicStructure.OwnStructure.id)
 
   }
 
 
 
-  koan("TimeMonoid"){
-    class Time(val hours: Int, val minutes: Int){
+  koan("TimeMonoid") {
+    class Time(val hours: Int, val minutes: Int) {
     }
 
-    implicit object TimeStructure extends Semiring[Time] {
-      def plus(x: Time, y: Time): Time = new Time(calcHours(x,y), (x.minutes + y.minutes) % 60)
-      def one: Time = new Time(1, 2)
-      def negate(x: Time) = new Time(1, 2)
+    implicit object TimeStructure extends Ring[Time] {
+      def plus(x: Time, y: Time): Time = format(new Time(x.hours + y.hours, x.minutes + y.minutes))
 
-      def times(x: Time, y: Time): Time = new Time(1, 2)
+      def one: Time = new Time(12,0)
 
-      def zero: Time = new Time(1, 2)
+      def negate(x: Time) = new Time(-x.hours, -x.minutes)
 
-      def calcHours(x:Time, y: Time): Int = if(x.minutes + y.minutes < 60) {
-        (x.hours + y.hours) % 12
-      }
-      else{
-        (x.hours + y.hours + 1) % 12
-      }
+      def times(x: Time, y: Time): Time = format(new Time(x.hours * y.hours, x.minutes * y.minutes))
+
+      def zero: Time = new Time(0, 0)
+
+      def format(x: Time): Time = new Time((x.hours + (x.minutes / 60)) % 12, x.minutes % 60)
     }
 
-    val time = TimeStructure.plus(new Time(11,50),new Time(4,20))
-  time.hours should be (4)
-  time.minutes should be (10)
+
+    val time = TimeStructure.plus(new Time(11, 50), new Time(4, 20))
+    time.hours should be(4)
+    time.minutes should be(10)
   }
 
-  koan("TypeClass"){
-
-  }
 
 }
