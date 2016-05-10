@@ -41,7 +41,7 @@ class Ex06_AlgebraicStructures extends KoanSuite{
   koan("ditibutive law"){
     3 * (2 + 4) == 3*2 + 3*4 should be (true)
 
-    4 / (1 - 2) should be (5/1 - 5/2)
+    4 * (1 - 2) should be (5*1 - 5*2)
   }
 
   koan("commutative law"){
@@ -95,8 +95,9 @@ class Ex06_AlgebraicStructures extends KoanSuite{
       }
     }
 
-    TimeStructure.plus(new Time(11,50),new Time(4,20)) should be (new Time(4,10))
-
+    val time = TimeStructure.plus(new Time(11,50),new Time(4,20))
+  time.hours should be (4)
+  time.minutes should be (10)
   }
 
   koan("TypeClass"){
