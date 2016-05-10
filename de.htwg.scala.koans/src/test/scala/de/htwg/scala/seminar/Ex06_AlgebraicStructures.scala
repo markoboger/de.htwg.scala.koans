@@ -57,20 +57,20 @@ class Ex06_AlgebraicStructures extends KoanSuite{
   }
 
   koan("inverse & neutral element"){
-    object AlgebraicStructure{
-      implicit object OwnStructure extends Group[Int]{
-        def op(x: Int, y: Int): Int = x + y
-        def inverse(x: Int): Int = -x
-        def id: Int = 0
 
-      }
+    implicit object OwnStructure extends Group[Int]{
+      def op(x: Int, y: Int): Int = x + y
+      def inverse(x: Int): Int = -x
+      def id: Int = 0
+
     }
 
-    AlgebraicStructure.OwnStructure.op(4,AlgebraicStructure.OwnStructure.id) should be (4)
 
-    AlgebraicStructure.OwnStructure.inverse(5) should be(-5)
+    OwnStructure.op(4,OwnStructure.id) should be (4)
 
-    AlgebraicStructure.OwnStructure.op(4, AlgebraicStructure.OwnStructure.inverse(4)) should be (AlgebraicStructure.OwnStructure.id)
+    OwnStructure.inverse(5) should be(-5)
+
+    OwnStructure.op(4, OwnStructure.inverse(4)) should be (OwnStructure.id)
 
   }
 
