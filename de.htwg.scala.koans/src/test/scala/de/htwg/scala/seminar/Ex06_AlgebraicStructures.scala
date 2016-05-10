@@ -14,7 +14,7 @@ import spire.syntax.literals.si._
   */
 class Ex06_AlgebraicStructures extends KoanSuite{
 
-
+/*
   koan("A rational number is precise") {
     val n1 = r"1/3"
     val n2 = 1/3
@@ -36,12 +36,12 @@ class Ex06_AlgebraicStructures extends KoanSuite{
     val n6 = x16"17"
     n6.equals(23) should be (true)
   }
-
+*/
 
   koan("ditibutive law"){
     3 * (2 + 4) == 3*2 + 3*4 should be (true)
 
-    4 * (1 - 2) should be (5*1 - 5*2)
+    5 * (1 - 2) should be (5*1 - 5*2)
   }
 
   koan("commutative law"){
