@@ -21,3 +21,9 @@ libraryDependencies += "com.typesafe.akka" %% "akka-http-experimental" % "2.4.4"
 libraryDependencies += "com.typesafe.akka" %% "akka-http-spray-json-experimental" % "2.4.4"
 
 libraryDependencies += "com.typesafe.akka" %% "akka-http-testkit-experimental" % "2.0.4"
+
+libraryDependencies += "com.typesafe.slick" %% "slick" % "3.1.1"
+
+libraryDependencies += "org.slf4j" % "slf4j-nop" % "1.7.10"
+
+libraryDependencies += "com.h2database" % "h2" % "1.4.187"
