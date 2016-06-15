@@ -12,6 +12,13 @@ class Ex04_Streams extends KoanSuite {
   val answer6 = (1 #:: 2 #:: 3 #:: Stream.empty)(1)
   val answer7 = 1
   val answer8 = 2 to 3
+  var answer9 = 0
+  var answer10 = ""
+  var answer11 = ""
+  var answer12 = ""
+  var answer13 = ""
+  var answer14 = ""
+  var answer15 = ""
   val answer16 = "yes"
   val answer17 = "yes"
   val answer18 = "yes"
@@ -34,19 +41,13 @@ class Ex04_Streams extends KoanSuite {
   val answer35 = "Stream.continually(5)"
   val answer36 = "Stream.from(10)"
   val answer37 = "Stream.from(100, 10)"
+
   val answer39 = Stream.from(100, 10)
   val answer40 = "yes"
-  val answer44 = "yes"
-  var answer9 = 0
-  var answer10 = ""
-  var answer11 = ""
-  var answer12 = ""
-  var answer13 = ""
-  var answer14 = ""
-  var answer15 = ""
   var answer41 = ""
   var answer42 = ""
   var answer43 = ""
+  val answer44 = "yes"
 
 
   koan("1. Create a empty Stream.") {
