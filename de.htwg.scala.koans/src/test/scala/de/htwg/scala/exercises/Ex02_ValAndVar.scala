@@ -18,7 +18,7 @@ class Ex02_ValAndVar extends KoanSuite {
 
     // What happens if you uncomment these lines? compilation problem as a is immutable (reassignment to val)
     // a = 7
-    // a should be (7)
+    // a should be (5)
   }
 
 
