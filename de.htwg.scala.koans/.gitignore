@@ -1,7 +1,4 @@
 
-# Java
-*.class
-
 # Mac
 .DS_Store
 
@@ -22,17 +19,19 @@ target/
 /build/
 
 # sbt
-.cache*
+.cache
+.cache-main
+.cache-tests
 .history
 .lib/
+lib/*.tmp
 dist/*
 target/
 lib_managed/
 src_managed/
 project/boot/
-project/plugins/project/
 project/target/
-project/project/
+project/plugins/project/
 logs/
 project/.sbtserver
 .sbtserver/
@@ -46,3 +45,6 @@ project/.sbtserver
 
 # Application
 /sudoku.log
+
+# Play Framework
+RUNNING_PID
