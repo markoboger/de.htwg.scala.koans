@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex29_ParentClasses extends KoanSuite {
+class Ex29_ParentClasses extends CodeTaskSuite("Parent Classes",29) {
   koan("Class hierarchy is linear, a class can only extend from one parent class") {
     class Worker(val firstName: String, val lastName: String) {}
     class Employee(override val firstName: String, override val lastName: String,

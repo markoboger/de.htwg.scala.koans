@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex29_Preconditions extends KoanSuite {
+class Ex29_Preconditions extends CodeTaskSuite("Preconditions",31) {
 
   class WithParameterRequirement(val myValue: Int) {
     require(myValue != 0)

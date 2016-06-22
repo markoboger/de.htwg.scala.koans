@@ -1,11 +1,11 @@
 package de.htwg.scala.exercises
 
 import de.htwg.scala.exercises.Monkey;
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 class Monkey
 
-class Ex46_Manifests extends KoanSuite {
+class Ex46_Manifests extends CodeTaskSuite("Manifests",46) {
   koan("""Manifests can be used to determine a type used
          |   before it erased by the VM by using an implicit manifest argument.""") {
     def inspect[T](l: List[T])(implicit manifest: scala.reflect.Manifest[T]) = manifest.toString

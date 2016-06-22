@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex02_ValAndVar extends KoanSuite {
+class Ex02_ValAndVar extends CodeTaskSuite("Val and Var",2) {
   
   koan("vars may be reassigned") {
     var a = 5

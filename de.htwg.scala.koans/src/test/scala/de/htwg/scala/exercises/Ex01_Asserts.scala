@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 // meditate on Exercise 01 about Asserts to see how the Scala Koans work
-class Ex01_Asserts extends KoanSuite {
+class Ex01_Asserts extends CodeTaskSuite("Asserts", 1) {
 
   koan("asserts can take a boolean argument") {
     assert(true) // enter true here

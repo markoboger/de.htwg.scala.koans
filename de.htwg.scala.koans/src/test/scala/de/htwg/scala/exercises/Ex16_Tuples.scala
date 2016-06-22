@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import java.util.Date
 
-class Ex16_Tuples extends KoanSuite {
+class Ex16_Tuples extends CodeTaskSuite("Tuples", 16) {
 
   koan("Tuples can be created easily") {
     val tuple = ("apple", "dog")

@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex11_Maps extends KoanSuite {
+class Ex11_Maps extends CodeTaskSuite("Maps", 11) {
 
   koan("Maps can be created easily") {
     val myMap = Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")

@@ -1,9 +1,9 @@
 package de.htwg.scala.seminar
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import scala.util.{Try, Success, Failure}
 
-class Ex05_MonadicStructures extends KoanSuite {
+class Ex05_MonadicStructures extends CodeTaskSuite("Monadic Structures",5) {
 
   // First lets start with map and flatMap
   koan("map() is an important function when it comes to monads. This koan should recall your map() knowledge.") {

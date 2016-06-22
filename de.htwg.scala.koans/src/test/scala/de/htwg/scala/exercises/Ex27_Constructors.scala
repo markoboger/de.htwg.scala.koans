@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex27_Constructors extends KoanSuite {
+class Ex27_Constructors extends CodeTaskSuite("Constructors",27) {
 
   class AboutConstructorWithAuxiliaryConstructor(val name: String) {
     // invoke auxiliary constructor

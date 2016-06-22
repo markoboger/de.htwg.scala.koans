@@ -1,12 +1,12 @@
 package de.htwg.scala.seminar
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 import scala.collection.parallel.ForkJoinTaskSupport
 import scala.collection.parallel.immutable.ParVector
 import scala.concurrent.forkjoin.ForkJoinPool
 
-class Ex01_ParallelCollections extends KoanSuite {
+class Ex01_ParallelCollections extends CodeTaskSuite("Parallel Collections",1) {
 
   koan("A sequential collection can be converted to its parallel counterpart (same name with the prefix \"Par\") using the par method.") {
     val seqVec = Vector(1, 2, 3)

@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex40_LazySequences extends KoanSuite {
+class Ex40_LazySequences extends CodeTaskSuite("Lazy Sequences",40) {
 
   koan("Creating a lazy collection from a strict collection") {
     val strictList = List(10, 20, 30)

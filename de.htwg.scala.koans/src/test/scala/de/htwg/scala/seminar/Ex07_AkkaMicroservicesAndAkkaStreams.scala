@@ -6,12 +6,12 @@ import akka.http.scaladsl.model.{ContentTypes, HttpEntity, StatusCodes}
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.{Flow, Sink, Source}
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 import scala.concurrent.duration._
 import scala.concurrent.Await
 
-class Ex07_AkkaMicroservicesAndAkkaStreams extends KoanSuite {
+class Ex07_AkkaMicroservicesAndAkkaStreams extends CodeTaskSuite("Akka Microservices and Akka Streams",7) {
 
   var requestResult = "Pong"
 

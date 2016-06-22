@@ -1,6 +1,6 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 case class Board(length: Int, height: Int) {
   case class Coordinate(x: Int, y: Int) {
@@ -10,7 +10,7 @@ case class Board(length: Int, height: Int) {
 }
 
 
-class Ex44_PathDependentTypes extends KoanSuite {
+class Ex44_PathDependentTypes extends CodeTaskSuite("Path-dependent Types",44) {
   koan(
     """When a class is instantiated inside of another object, it belongs to the object.  This is a path
       | dependent type. Once established, it cannot be placed inside of another object""") {

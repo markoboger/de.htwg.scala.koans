@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex20_Iterables extends KoanSuite {
+class Ex20_Iterables extends CodeTaskSuite("Iterables",20) {
   koan( """Iterable is a trait that has the ability to return an iterator of itself.
           | Some known iterators are Sets, Lists, Vectors, Stacks, and Streams. Iterator has two
           | important methods:  `hasNext`, which answers whether the iterator has another element

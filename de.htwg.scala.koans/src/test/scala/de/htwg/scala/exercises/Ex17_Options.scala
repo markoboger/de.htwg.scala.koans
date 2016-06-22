@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex17_Options extends KoanSuite {
+class Ex17_Options extends CodeTaskSuite("Options",17) {
 
   koan("Option can have one of two values - Some or None") {
     val someValue: Option[String] = Some("I am wrapped in something")

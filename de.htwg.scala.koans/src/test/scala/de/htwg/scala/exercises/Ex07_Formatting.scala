@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex07_Formatting extends KoanSuite {
+class Ex07_Formatting extends CodeTaskSuite("Formatting", 7) {
 
   koan("String can be placed in format") {
     val s = "Hello World"

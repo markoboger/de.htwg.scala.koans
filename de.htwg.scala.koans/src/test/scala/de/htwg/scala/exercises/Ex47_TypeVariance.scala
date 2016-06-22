@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex47_TypeVariance extends KoanSuite {
+class Ex47_TypeVariance extends CodeTaskSuite("Type Variance",47) {
 
   class Fruit
 

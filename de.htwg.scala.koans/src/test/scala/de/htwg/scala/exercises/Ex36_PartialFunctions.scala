@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex36_PartialFunctions extends KoanSuite {
+class Ex36_PartialFunctions extends CodeTaskSuite("Partial Functions",36) {
 
   koan( """A partial function is a trait that when
           | implemented can be used as building blocks to determine

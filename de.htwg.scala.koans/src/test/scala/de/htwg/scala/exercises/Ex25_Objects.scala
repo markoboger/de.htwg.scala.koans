@@ -1,6 +1,6 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 class SecretAgent(val name: String) {
   def shoot(n: Int) {
@@ -25,7 +25,7 @@ object Person {
 }
 
 
-class Ex25_Objects extends KoanSuite {
+class Ex25_Objects extends CodeTaskSuite("Objects",25) {
   koan(
     """An object is a singleton. One object -- that's it. This object is a replacement of static in Java,
       | and is called upon much in the same way""") {

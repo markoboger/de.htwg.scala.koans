@@ -3,13 +3,13 @@ package de.htwg.scala.seminar
 import akka.actor._
 import akka.pattern.ask
 import akka.util.Timeout
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.concurrent.{Await, Future}
 
-class Ex03_Actors extends KoanSuite {
+class Ex03_Actors extends CodeTaskSuite("Actors",3) {
 
 
   koan("First you create an actor system.") {

@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import scala.collection.mutable
 
-class Ex13_MutableMaps extends KoanSuite {
+class Ex13_MutableMaps extends CodeTaskSuite("Mutable Maps", 13) {
 
   koan("Mutable maps can be created easily") {
     val myMap = mutable.Map("MI" -> "Michigan", "OH" -> "Ohio", "WI" -> "Wisconsin", "IA" -> "Iowa")

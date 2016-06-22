@@ -2,7 +2,7 @@ package de.htwg.scala.seminar
 
 import akka.actor.{ActorSystem, Props}
 import akka.stream.actor.{ActorSubscriber, OneByOneRequestStrategy}
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import slick.backend.DatabasePublisher
 import slick.driver.H2Driver.api._
 import slick.jdbc.meta.MTable
@@ -40,7 +40,7 @@ class Employees(tag: Tag) extends Table[Employee](tag, "EMPLOYEES") {
   def department = foreignKey("DEP_FK", departmentId, TableQuery[Departments])(_.id)
 }
 
-class Ex08_Slick extends KoanSuite {
+class Ex08_Slick extends CodeTaskSuite("Slick",8) {
 
   val db = Database.forURL("jdbc:h2:mem:test1;DB_CLOSE_DELAY=-1", driver = "org.h2.Driver")
 

@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex43_Extractors extends KoanSuite {
+class Ex43_Extractors extends CodeTaskSuite("Extractors",43) {
    koan("When you create a case class, it automatically can be used with pattern matching since it has an extractor") {
      case class Employee(firstName:String, lastName:String)
 

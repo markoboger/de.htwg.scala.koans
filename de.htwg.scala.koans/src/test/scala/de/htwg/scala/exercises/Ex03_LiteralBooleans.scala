@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex03_LiteralBooleans extends KoanSuite {
+class Ex03_LiteralBooleans extends CodeTaskSuite("Literal Boolean",3) {
 
   koan("""Boolean literals are either true or false, using the true or false keyword""") {
     val a = true

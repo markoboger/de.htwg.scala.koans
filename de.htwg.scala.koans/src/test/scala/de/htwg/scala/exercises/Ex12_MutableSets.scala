@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import scala.collection.mutable
 
-class Ex12_MutableSets extends KoanSuite {
+class Ex12_MutableSets extends CodeTaskSuite("Mutable Sets", 12) {
 
   koan("Mutable sets can be created easily") {
     val mySet = mutable.Set("Michigan", "Ohio", "Wisconsin", "Iowa")

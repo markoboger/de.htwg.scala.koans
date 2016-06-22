@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex05_LiteralStrings extends KoanSuite {
+class Ex05_LiteralStrings extends CodeTaskSuite("Literal Strings", 5) {
 
   koan("Character Literals are quoted with single quotes") {
     val a = 'a'

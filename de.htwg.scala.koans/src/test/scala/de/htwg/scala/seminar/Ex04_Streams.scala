@@ -1,8 +1,8 @@
 package test.scala.de.htwg.scala.seminar
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex04_Streams extends KoanSuite {
+class Ex04_Streams extends CodeTaskSuite("Streams",4) {
 
   val answer1 = Stream.empty
   val answer2 = Stream(1, 2, 3)

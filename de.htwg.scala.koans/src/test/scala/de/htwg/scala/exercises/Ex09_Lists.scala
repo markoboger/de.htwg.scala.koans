@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex09_Lists extends KoanSuite {
+class Ex09_Lists extends CodeTaskSuite("Lists", 9) {
 
   koan("Nil lists are identical, even of different types") {
     val a: List[String] = Nil

@@ -1,10 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
-import language.postfixOps
-import Stream._
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex21_Traversables extends KoanSuite {
+class Ex21_Traversables extends CodeTaskSuite("Traversables",21) {
 
   koan( """Traverables are the superclass of Lists, Arrays, Maps, Sets, Streams, and more.
           |   The methods involved can be applied to each other in a different type.  ++ appends
@@ -248,14 +246,14 @@ class Ex21_Traversables extends KoanSuite {
   }
 
   koan( """Take is used often with Streams, and Streams after all are Traversable""") {
-    def streamer(v: Int): Stream[Int] = cons(v, streamer(v + 1))
+    def streamer(v: Int): Stream[Int] = v #:: streamer(v + 1)
     val a = streamer(2)
     (a take 3 toList) should be(List(2, 3, 4))
   }
 
   koan( """Drop will take the rest of the Traversable except
           |  the number of elements given""") {
-    def streamer(v: Int): Stream[Int] = cons(v, streamer(v + 1))
+    def streamer(v: Int): Stream[Int] = v #:: streamer(v + 1)
     val a = streamer(2)
     ((a drop 6) take 3).toList should be(List(8, 9, 10))
   }

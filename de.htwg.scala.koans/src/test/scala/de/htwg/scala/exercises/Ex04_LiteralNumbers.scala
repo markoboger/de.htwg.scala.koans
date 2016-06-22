@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex04_LiteralNumbers extends KoanSuite {
+class Ex04_LiteralNumbers extends CodeTaskSuite("Literal Numbers",4) {
   koan("Integer Literals are 32-bit and can be created from decimal, hexadecimal") {
     val a = 2
     val b = 31

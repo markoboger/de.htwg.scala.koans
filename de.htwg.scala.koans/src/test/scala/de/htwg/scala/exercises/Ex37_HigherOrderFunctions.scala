@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex37_HigherOrderFunctions extends KoanSuite {
+class Ex37_HigherOrderFunctions extends CodeTaskSuite("Higher Order Functions",37) {
 
   koan("Meet lambda. Anonymous function") {
     def lambda = { x: Int => x + 1 }

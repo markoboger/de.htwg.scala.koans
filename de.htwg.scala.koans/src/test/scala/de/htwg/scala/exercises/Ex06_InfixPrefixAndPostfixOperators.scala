@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import language.postfixOps
 
-class Ex06_InfixPrefixAndPostfixOperators extends KoanSuite {
+class Ex06_InfixPrefixAndPostfixOperators extends CodeTaskSuite("Infix, Prefix and Postfix-Operators", 6) {
 
   koan("""Simple: Infix Operators are available if an object
            |  has a method that takes one parameter.""") {

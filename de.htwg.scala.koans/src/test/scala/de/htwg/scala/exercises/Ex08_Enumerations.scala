@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex08_Enumerations extends KoanSuite {
+class Ex08_Enumerations extends CodeTaskSuite("Enumerations" , 8) {
 
 // To create an enumeration, create an object that extends the abstract class Enumeration,
 //          and set a val variable to the method Value.  This is a trick to give values to each val."

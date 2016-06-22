@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex10_Sets extends KoanSuite {
+class Ex10_Sets extends CodeTaskSuite("Sets", 10) {
 
   koan("Sets can be created easily") {
     val mySet = Set("Michigan", "Ohio", "Wisconsin", "Iowa")

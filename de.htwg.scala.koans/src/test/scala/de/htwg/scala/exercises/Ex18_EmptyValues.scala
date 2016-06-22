@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex18_EmptyValues extends KoanSuite {
+class Ex18_EmptyValues extends CodeTaskSuite("Empty Values",18) {
 
   koan("None equals None") {
     assert(None === None)

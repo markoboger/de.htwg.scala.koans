@@ -1,6 +1,6 @@
 package de.htwg.scala.seminar
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import spire.math.Natural
 import spire.math._
 import spire.implicits._
@@ -12,7 +12,7 @@ import spire.syntax.literals.si._
 /**
   * Created by Ron on 10.05.2016.
   */
-class Ex06_AlgebraicStructures extends KoanSuite{
+class Ex06_AlgebraicStructures extends CodeTaskSuite("Algebraic Structures",6){
 
 
   koan("A rational number is precise") {

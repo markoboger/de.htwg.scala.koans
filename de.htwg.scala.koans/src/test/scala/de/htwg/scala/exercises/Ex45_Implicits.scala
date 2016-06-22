@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
 import language.implicitConversions
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex45_Implicits extends KoanSuite {
+class Ex45_Implicits extends CodeTaskSuite("Implicits",45) {
 
   koan("""Implicits wrap around existing classes to provide extra functionality
            |   This is similar to \'monkey patching\' in Ruby, and Meta-Programming in Groovy.

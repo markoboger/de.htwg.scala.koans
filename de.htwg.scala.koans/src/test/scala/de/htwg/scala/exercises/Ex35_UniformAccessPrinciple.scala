@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex35_UniformAccessPrinciple extends KoanSuite {
+class Ex35_UniformAccessPrinciple extends CodeTaskSuite("Uniform Access Principle",35) {
 
   class CalculatesAgeUsingMethod(var currentYear: Int, birthYear: Int) {
 

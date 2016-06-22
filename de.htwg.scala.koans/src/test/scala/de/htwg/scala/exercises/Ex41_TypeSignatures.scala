@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex41_TypeSignatures extends KoanSuite {
+class Ex41_TypeSignatures extends CodeTaskSuite("Type Signatures",41) {
   koan("In Java you declare a generic type within a <>, in Scala it is []") {
     val z: List[String] = "Do" :: "Re" :: "Mi" :: "Fa" :: "So" :: "La" :: "Te" :: "Do" :: Nil
   }
@@ -24,7 +24,7 @@ class Ex41_TypeSignatures extends KoanSuite {
     }
 
     val intRand = new IntRandomizer
-    (intRand.draw < Int.MaxValue) should be (__)
+    (intRand.draw < Int.MaxValue) should be (true)
   }
 
   koan("Class meta-information can be retrieved by class name by using classOf[className]") {

@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex24_Classes extends KoanSuite {
+class Ex24_Classes extends CodeTaskSuite("Classes",24) {
 
 
   // you can define class with var or val parameters

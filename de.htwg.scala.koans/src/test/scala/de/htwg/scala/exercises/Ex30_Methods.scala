@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex30_Methods extends KoanSuite {
+class Ex30_Methods extends CodeTaskSuite("Methods",30) {
 
   koan(
     """In scala, methods can be placed inside in methods, this comes useful for

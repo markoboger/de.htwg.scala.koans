@@ -1,6 +1,6 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 /**
  * AboutByNameParameter
@@ -8,7 +8,7 @@ import de.htwg.scala.koans.KoanSuite
  * Prerequisites: AboutEither, AboutHigherOrderFunctions, AboutExceptions,
  *                About Pattern Matching, AboutApply
  */
-class Ex34_ByNameParameter extends KoanSuite {
+class Ex34_ByNameParameter extends CodeTaskSuite("By-Name Parameters",34) {
 
   koan(
     """() => Int is a Function type that takes a Unit type and returns an Int.

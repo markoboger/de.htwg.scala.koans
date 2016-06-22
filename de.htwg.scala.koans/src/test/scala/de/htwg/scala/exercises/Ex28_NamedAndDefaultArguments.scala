@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex28_NamedAndDefaultArguments() extends KoanSuite {
+class Ex28_NamedAndDefaultArguments() extends CodeTaskSuite("Named and Default Arguments",28) {
 
   class WithoutClassParameters() {
     def addColors(red: Int, green: Int, blue: Int) = {

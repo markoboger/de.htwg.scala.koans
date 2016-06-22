@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex19_SequencesAndArrays extends KoanSuite {
+class Ex19_SequencesAndArrays extends CodeTaskSuite("Sequences and Arrays",19) {
 
   koan("A list can be converted to an array") {
     val l = List(1, 2, 3)

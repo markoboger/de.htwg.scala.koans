@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex15_ForExpressions extends KoanSuite {
+class Ex15_ForExpressions extends CodeTaskSuite("For Expressions", 15) {
 
   koan("For loops can be simple") {
     val someNumbers = Range(0, 10) // non-inclusive on the upper bound

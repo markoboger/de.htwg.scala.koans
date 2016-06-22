@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex38_PartiallyAppliedFunctions extends KoanSuite {
+class Ex38_PartiallyAppliedFunctions extends CodeTaskSuite("Partially applied Functions",38) {
   koan("""A partially applied function is a function that you do not apply any or all the
          | arguments, creating another function. This partially applied function
          | doesn't apply any arguments""") {

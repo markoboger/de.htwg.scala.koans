@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import de.htwg.scala.exercises.Person;
 
-class Ex39_InfixTypes extends KoanSuite {
+class Ex39_InfixTypes extends CodeTaskSuite("Infix Types",39) {
 
   koan("""We can make a type infix, meaning that the type can be displayed in complement
            between two types in order to make a readable delaration""") {

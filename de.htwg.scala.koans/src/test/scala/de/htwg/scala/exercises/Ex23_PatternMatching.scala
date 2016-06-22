@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex23_PatternMatching extends KoanSuite {
+class Ex23_PatternMatching extends CodeTaskSuite("Pattern Matching",23) {
 
   koan("Pattern matching returns something") {
 

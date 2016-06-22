@@ -1,9 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
-import de.htwg.scala.exercises.Person;
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex22_CaseClasses extends KoanSuite {
+class Ex22_CaseClasses extends CodeTaskSuite("Case Classes",22) {
 
   // case classes are very convenient, they give you a lot for free. The following Koans will
   // help you understand some of the conveniences. Case classes are also an integral part of

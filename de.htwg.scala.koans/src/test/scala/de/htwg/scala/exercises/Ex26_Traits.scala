@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex26_Traits extends KoanSuite {
+class Ex26_Traits extends CodeTaskSuite("Traits",26) {
   koan("A class uses the extends keyword to mixin a trait if it is the only relationship the class inherits") {
     case class Event(name: String)
 

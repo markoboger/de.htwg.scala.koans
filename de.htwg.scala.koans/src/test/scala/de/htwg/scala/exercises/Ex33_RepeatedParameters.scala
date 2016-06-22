@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex33_RepeatedParameters extends KoanSuite {
+class Ex33_RepeatedParameters extends CodeTaskSuite("Repeated Parameters",33) {
 
   def repeatedParameterMethod(x: Int, y: String, z: Any*) = {
     "%d %ss can give you %s".format(x, y, z.mkString(", "))

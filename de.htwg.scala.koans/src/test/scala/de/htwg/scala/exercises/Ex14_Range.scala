@@ -1,8 +1,8 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
-class Ex14_Range extends KoanSuite {
+class Ex14_Range extends CodeTaskSuite("Range",14) {
 
   koan("Range are not inclusive at end of range") {
     val someNumbers = Range(0, 10)

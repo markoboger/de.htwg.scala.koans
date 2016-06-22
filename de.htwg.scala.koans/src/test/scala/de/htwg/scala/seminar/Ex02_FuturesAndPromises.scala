@@ -1,13 +1,13 @@
 package de.htwg.seminar
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent._
 import scala.concurrent.duration._
 import scala.util.{Failure, Success}
 
-class Ex02_FuturesAndPromises extends KoanSuite {
+class Ex02_FuturesAndPromises extends CodeTaskSuite("Futures and Promises",2) {
 
   koan("a callback registered with \"onSuccess\" is called when the future completes successfully") {
 

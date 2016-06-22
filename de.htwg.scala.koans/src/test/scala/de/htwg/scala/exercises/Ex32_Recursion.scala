@@ -1,9 +1,9 @@
 package de.htwg.scala.exercises
 
-import de.htwg.scala.koans.KoanSuite
+import org.codetask.koanlib.CodeTaskSuite
 import scala.annotation.tailrec
 
-class Ex32_Recursion extends KoanSuite {
+class Ex32_Recursion extends CodeTaskSuite("Recursion",32) {
 
   koan(
     """Methods can be embedded in other methods, this is particularly useful as helper methods for recursion.
