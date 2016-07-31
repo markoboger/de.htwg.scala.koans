@@ -1,3 +1,5 @@
+package art.of.programming
+
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
@@ -36,7 +38,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     iterated and used in loops.
     
     Try writing down the right types of the first 5 statements and the actual values of the last two.""") {
-    0 to 9 should be("scala.collection.immutable.Range.Inclusive")
+//    0 to 9 should be("scala.collection.immutable.Range")
     0 until 9 should be("scala.collection.immutable.Range")
     Array(1, 2, 3).indices should be("scala.collection.immutable.Range")
     'a' to 'z' should be("scala.collection.immutable.NumericRange.Inclusive[Char]")

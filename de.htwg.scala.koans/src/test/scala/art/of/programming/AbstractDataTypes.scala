@@ -1,3 +1,5 @@
+package art.of.programming
+
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
@@ -42,9 +44,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     
     Note: Don't bother to checking if the stack is empty before some operations. The same for the fact that 
     this Stack could only store 10 elements.""") {
-    // solve
     class MyStack[A: Manifest] extends Stack[A] {
-      // endsolve
       private val data = new Array[A](10)
       private var top = 0
       // solve
@@ -59,8 +59,9 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
       }
       def isEmpty: Boolean = top == 0
       def peek: A = data(top - 1)
+      // endsolve
     }
-    // endsolve
+   
 
     val s = new MyStack[Int]
     // test
@@ -89,9 +90,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     Try to implement a custom queue (MyQueue) with use of the previously implemented trait.
     Note: Don't bother to checking if the queue is empty before some operations. The same for the fact that 
     this Queue could only store 10 elements.""") {
-    // solve
     class MyQueue[A: Manifest] extends Queue[A] {
-      // endsolve
       private val data = new Array[A](10)
       private var back = 0
       private var front = 0
@@ -108,8 +107,9 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
       }
       def isEmpty: Boolean = front == back
       def peek: A = data(front)
+      // endsolve
     }
-    // endsolve
+    
 
     trait Queue[A] {
       def enqueue(elem: A): Unit

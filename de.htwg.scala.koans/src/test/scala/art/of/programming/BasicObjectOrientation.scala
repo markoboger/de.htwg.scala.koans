@@ -1,3 +1,5 @@
+package art.of.programming
+
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
