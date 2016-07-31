@@ -105,15 +105,16 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
       def main(args: Array[String]) = {
         // solve
         val aInt = new AtomicInteger(0)
-        // endsolve
+        
         val threads = for (i <- 1 to 10) yield {
           new Thread(new Runnable() {
             def run {
               // solve
               for (j <- 1 to 10000) aInt.addAndGet(1)
-              // endsolve
+            
             }
           })
+        // endsolve
         }
         threads.foreach(_.start())
         threads.foreach(_.join())
@@ -125,17 +126,17 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
 
     object FasterMultithreading {
       def main(args: Array[String]) = {
-        // solve
+        
         var cnt = 0
-        // endsolve
+        
         val threads = for (i <- 1 to 10) yield {
           new Thread(new Runnable() {
             def run {
               // solve
               var c = 0
-              // endsolve
+              
               for (j <- 1 to 10000) c += 1
-              // solve
+              
               FasterMultithreading.synchronized { cnt += c }
               // endsolve
             }

@@ -58,8 +58,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
         println("draw rectangle")
       }
     }
-    // endsolve
-    // solve
+    
     class Circle(val radius: Double, val color: Color) extends Shape(color) {
       override def area: Double = math.Pi * radius * radius
       override def perimeter: Double = 2 * math.Pi * radius
@@ -79,13 +78,11 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     Secondly try to write an immutable method named immutable with an empty body and argumentlist.""") {
     // solve
     final class Immutable
-    // endsolve
-
+    
     class ImmutableMethod() {
-      // solve
       final def immutable() {}
-      // endsolve
     }
+    // endsolve
 
   }
 
@@ -115,20 +112,17 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     abstract class Animal {
       def speak
     }
-    // endsolve
-    // solve
+   
     trait WaggingTail {
       def whipTail
     }
-    // endsolve
-    // solve    
-    trait FourLeggedAnimal {
+
+   trait FourLeggedAnimal {
       def walk
       def run
     }
-    // endsolve
-    // solve
-    class Dog extends Animal with WaggingTail with FourLeggedAnimal {
+
+   class Dog extends Animal with WaggingTail with FourLeggedAnimal {
       def speak = println("woof")
       def whipTail = println("tail whipping")
       def walk = println("walking")
@@ -147,13 +141,11 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
       with the additional trait.""") {
     // solve
     class DavidBanner
-    // endsolve
-    // solve
+ 
     trait Angry {
       println("You won't like me ...")
     }
-    // endsolve
-    // solve
+ 
     object Hulk {
       val hulk = new DavidBanner with Angry
     }
@@ -188,9 +180,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     class Dog extends Pet {
       def comeToMaster = println("I'm coming!")
     }
-    // endsolve
 
-    // solve
     class Cat extends Pet {
       override def speak = println("meow")
       def comeToMaster = println("That's not gonna happen.")
@@ -199,19 +189,17 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
 
     object Test {
       val zeus = new Dog
-      // test
-      zeus.comeToMaster == "I'm coming!" should be(true)
-      // endtest
-
       val cleopatra = new Cat
       // test
+      zeus.comeToMaster == "I'm coming!" should be(true)
+     
       cleopatra.comeToMaster == "That's not gonna happen." should be(true)
       cleopatra.speak == "meow" should be(true)
       // endtest
     }
   }
 
-  koan(""" Exercise: (Traits as simple mixins)
+  codetask(""" Exercise: (Traits as simple mixins)
     Implement the following:
     
     1. A trait "Tail" with wagTail
@@ -221,14 +209,12 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     trait Tail {
       def wagTail = println("tail is wagging")
     }
-    // endsolve
-    // solve
+  
     abstract class Pet {
       def speak
       def ownerIsHome = println("excited")
     }
-    // endsolve
-    // solve
+
     class Dog extends Pet with Tail {
       def speak { println("woof") }
     }
@@ -279,7 +265,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     
     Note: This implementation does not show ability to change the order in which the elements should be sorted (see next example)""") {
     // solve
-    def bubbleSort[A <% Ordered[A]](a: Array[A]) // endsolve
+    def bubbleSort[A <% Ordered[A]](a: Array[A]) 
     {
       for (i <- 0 until a.length - 1) {
         for (j <- 0 until a.length - 1 - i) {
@@ -291,19 +277,21 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
         }
       }
     }
+    // endsolve
   }
 
   codetask(""" Exercise: (Advanced Parametric Functions/Methods)
     As we have seen in the previous codetask the method bubbleSort had no chance of altering the sorting order.
     
     Try to fix this problem by using lambda literals and multiple argument lists. Use "func" as your the reference for the lambda literal.""") {
-    // solve
-    def bubbleSort[A](a: Array[A])(func: (A, A) => Boolean) // endsolve
+    
+    def bubbleSort[A](a: Array[A])(func: (A, A) => Boolean) 
     {
+      // solve
       for (i <- 0 until a.length - 1) {
         for (j <- 0 until a.length - 1 - i) {
-          // solve
-          if (func(a(j + 1), a(j))) // endsolve
+         
+          if (func(a(j + 1), a(j))) 
           {
             val tmp = a(j)
             a(j) = a(j + 1)
@@ -311,14 +299,13 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
           }
         }
       }
+      // endsolve
     }
     val nums = Array(15, 1, 9, 4, 99)
     bubbleSort(nums)(_ > _)
     // test
     nums should be(Array(99, 15, 9, 4, 1))
-    // endtest
     bubbleSort(nums)(_ < _)
-    // test
     nums should be(Array(1, 4, 9, 15, 99))
     // endtest
   }
