@@ -6,7 +6,7 @@ import org.codetask.koanlib.CodeTaskSuite
 class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
   codetask("""Exercise: (Import statements)
     Write down the import statements for Date, NoSuchElementException, readInt and every collection.
-    Try to enter the necessary statements with full the package names (just for testing purpose), e.g. scala.math.BigInt instead of math.BigInt."""){
+    Try to enter the necessary statements with full package names (just for testing purpose), e.g. scala.math.BigInt instead of math.BigInt."""){
     {
       //solve
       import java.util.{Date, NoSuchElementException}
@@ -32,10 +32,10 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
     Try to write down the types of the first 4 statments and afterwards the values of the remaining
     statements."""){
     import io.Source
-    val source = Source.fromFile("file.txt")
-    source should be("scala.io.BufferedSource")
+    val source = Source.fromFile("numbers.txt")
+    source.isInstanceOf[scala.io.BufferedSource] should be(true)
     val lines = source.getLines
-    lines should be("Iterator[String]")
+    lines.isInstanceOf[Iterator[String]] should be(true)
 
     
     lines.next.toInt should be(5)
@@ -60,15 +60,16 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
     1
     """){
     import scala.io.Source  
+    var sum = 0
     //solve 
     val source = Source.fromFile("fiveNums.txt")
     val lines = source.getLines
-    val nums = lines.filter(_.nonEmpty).map(_.toInt)  
+    sum = lines.filter(_.nonEmpty).map(_.toInt).foldLeft(0)(_+_) 
     source.close
     //endsolve
     
     //test
-    nums should be(15)
+    sum should be(15)
     //endtest
   }
 
@@ -100,7 +101,7 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
     import java.io.File
     import java.util.Scanner
     
-    val scanner = new Scanner(new File("file.txt"))
+    val scanner = new Scanner(new File("numbersAndText.txt"))
     scanner.nextInt should be(5)
     scanner.hasNextInt should be(true)
     val (intElement, stringElement) = (scanner.nextInt, scanner.next)
@@ -132,9 +133,11 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
 
   koan(""" Formatted Output:
     When printing Strings in Scala you can format them to your liking by using a method called printf or 
-    string interpolation as we seen in some previous chapters."""){
-      printf("The number is %d",42) should be("The number is 42")
-      printf("The number is a float %f",4.2) should be("The number is a float 4.200000")
+    string interpolation as we have seen in some previous chapters."""){
+      val num = 42
+      f"The number is $num" should be("The number is 42")
+      val float = 4.2
+      f"The number is a float $float%2.2f" should be("The number is a float 4,20")
       printf("The number is delimited %2f",4.2) //4.200000
       printf("The number is delimited after the period %5.2f",4.2) //4.20
       printf("The number will be displayed in scientific notation %5.2e",4.2e10)

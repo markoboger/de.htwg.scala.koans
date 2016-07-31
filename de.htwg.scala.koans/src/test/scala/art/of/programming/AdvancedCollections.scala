@@ -57,7 +57,7 @@ class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
     "one" -> 1 should be(("one", 1))
 
     val fullTypeName = Map(("one", 1), ("two", 2), ("three", 3))
-    fullTypeName should be("scala.collection.immutable.Map[java.lang.String, Int]")
+    fullTypeName.isInstanceOf[scala.collection.immutable.Map[java.lang.String, Int]] should be(true)
 
     val m1 = fullTypeName
     val m2 = Map("one" -> 1, "two" -> 2, "three" -> 3)
@@ -88,7 +88,7 @@ class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
     elements where duplicates are not allowed and order doesn't matter.
     Sets can be immutable and mutable, by default the set is immutable.""") {
     val set = Set(1, 2, 3)
-    set should be("scala.collection.immutable.Set[Int]")
+    set.isInstanceOf[scala.collection.immutable.Set[Int]] should be(true)
 
     set + 1 should be(Set(1, 2, 3))
     set - 1 should be(Set(2, 3))
@@ -119,7 +119,7 @@ class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
     "one" -> 1 should be(("one", 1))
 
     val fullTypeName = Map(("one", 1), ("two", 2), ("three", 3))
-    fullTypeName should be("scala.collection.immutable.Map[java.lang.String, Int]")
+    fullTypeName.isInstanceOf[scala.collection.immutable.Map[java.lang.String, Int]] should be(true)
 
     val m1 = fullTypeName
     val m2 = Map("one" -> 1, "two" -> 2, "three" -> 3)

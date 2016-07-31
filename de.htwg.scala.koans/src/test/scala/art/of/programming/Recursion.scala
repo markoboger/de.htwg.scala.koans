@@ -97,13 +97,13 @@ class Recursion extends CodeTaskSuite("Recursion", 4) {
     With this you can easily match the exception and handle it the right way. The possibility of using a wildcard in a try/catch isn't
     good practice and even the compile will warn you about this.""") {
     val response = try {
-      val s = "Hallo Welt"
-      s.charAt(-1)
+      val s = "Hello World"
+      s.charAt(15)
     } catch {
       case number: java.lang.NumberFormatException => "You entered an illegal number"
-      case bounds: java.lang.StringIndexOutOfBoundsException => "You tried to access an character which was not in range of the String"
-      case _ => "You catched everything, well done!!!"
+      case bounds: java.lang.StringIndexOutOfBoundsException => "You tried to access a character that is not in range of the String"
+      case _ => "You cought everything, well done!!!"
     }
-    response should be("java.lang.IndexOutOfBoundsException")
+    response should be("You tried to access a character that is not in range of the String")
   }
 }

@@ -38,14 +38,14 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     iterated and used in loops.
     
     Try writing down the right types of the first 5 statements and the actual values of the last two.""") {
-//   0 to 9 should be("scala.collection.immutable.Range")
-    0 until 9 should be("scala.collection.immutable.Range")
-    Array(1, 2, 3).indices should be("scala.collection.immutable.Range")
-    'a' to 'z' should be("scala.collection.immutable.NumericRange.Inclusive[Char]")
-    1.0 to 2.0 by 0.5 should be("scala.collection.immutable.NumericRange[Double]")
+    (0 to 9).isInstanceOf[scala.collection.immutable.Range.Inclusive] should be(true)
+    (0 until 9).isInstanceOf[scala.collection.immutable.Range] should be(true)
+    Array(1, 2, 3).indices.isInstanceOf[scala.collection.immutable.Range] should be(true)
+    ('a' to 'z').isInstanceOf[scala.collection.immutable.NumericRange.Inclusive[Char]] should be(true)
+    (1.0 to 2.0 by 0.5).isInstanceOf[scala.collection.immutable.NumericRange[Double]] should be(true)
 
-    10 to 1 should be("Range()")
-    10 to 1 by -1 should be("Range(10,9,8,7,6,5,4,3,2,1)")
+    (3 to 1).toString should be("Range()")
+    (3 to 1 by -1).toString should be("Range(3, 2, 1)")
   }
 
   codetask(""" Exercise: (Simple for loop)
@@ -155,10 +155,10 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     for (i <- 1 to 10) println(i)
     (1 to 10).foreach(i => println(i))
 
-    for (i <- 1 to 10) yield i * i should be(Vector(1, 4, 9, 16, 25, 36, 49, 64, 81, 100))
+    (for (i <- 1 to 10) yield i * i) should be(Vector(1, 4, 9, 16, 25, 36, 49, 64, 81, 100))
     (1 to 10).map(i => i * i) should be(Vector(1, 4, 9, 16, 25, 36, 49, 64, 81, 100))
 
-    for (i <- 1 to 10; if i % 2 == 0) yield i * i should be(Vector(4, 16, 36, 64, 100))
+    (for (i <- 1 to 10; if i % 2 == 0) yield i * i) should be(Vector(4, 16, 36, 64, 100))
     (1 to 10).filter(_ % 2 == 0).map(i => i * i) should be(Vector(4, 16, 36, 64, 100))
   }
 
@@ -177,7 +177,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     programs have to be written for parallel or concurrent execution. In Scala this is easily archived by calling the method
     par on collections.
     Try to figure out the type of the first statement and afterwards the result of the for loop which is run in parallel.""") {
-    (1 to 10).par should be(scala.collection.parallel.immutable.ParRange)
+    (1 to 10).par.isInstanceOf[scala.collection.parallel.immutable.ParRange] should be(true)
 
     var i = 0
     for (j <- (1 to 1000000000).par) i += 1
@@ -191,8 +191,8 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     Try to figure out the type of the following statements.""") {
 
     val numbers = Array.fill(100)(Math.random)
-    numbers should be("Array[Double]")
-    numbers.map(x => x * x).filter(_ < 0.25) should be("Array[Double]")
-    numbers.view.map(x => x * x).filter(_ < 0.25) should be("scala.collection.SeqView[Double,Array[Double]]")
+    numbers.isInstanceOf[Array[Double]] should be(true)
+    numbers.map(x => x * x).filter(_ < 0.25).isInstanceOf[Array[Double]] should be(true)
+    numbers.view.map(x => x * x).filter(_ < 0.25).isInstanceOf[scala.collection.SeqView[Double,Array[Double]]] should be(true)
   }
 }

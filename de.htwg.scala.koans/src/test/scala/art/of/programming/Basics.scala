@@ -11,13 +11,13 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     that all of those datatypes are implemented as Classes.
     
     Solve the type of the following values""") {
-    5 should be(Int)
-    5.1 should be(Double)
-    5.1F should be(Float)
-    5000L should be(Long)
-    'x' should be(Char)
-    true should be(Boolean)
-    "Hello" should be("String")
+    5.isInstanceOf[Int] should be(true)
+    (5.1).isInstanceOf[Double] should be(true)
+    (5.1F).isInstanceOf[Float] should be(true)
+    5000L.isInstanceOf[Long] should be(true)
+    'x'.isInstanceOf[Char] should be(true)
+    true .isInstanceOf[Boolean] should be(true)
+    "Hello".isInstanceOf[String] should be(true)
   }
 
   koan("""Tuple:
@@ -26,26 +26,25 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     This will be discussed or tested in a later state of tests.
     
     Solve the right representation for the following tuples""") {
-    ("Hello", 42) should be("(String, Int)")
-    "Hello" -> 42 should be("(String, Int)")
+    ("Hello", 42).isInstanceOf[(String, Int)] should be(true)
+    ("Hello" -> 42).isInstanceOf[(String, Int)] should be(true)
 
-    ("Hello", 42, 'a') should be("(String, Int, Char)")
-    "Hello" -> 42 -> 'a' should be("((String, Int), Char)")
+    ("Hello", 42, 'a').isInstanceOf[(String, Int, Char)] should be(true)
+    ("Hello" -> 42 -> 'a').isInstanceOf[(String, Int, Char)] should be(false)
+    ("Hello" -> 42 -> 'a').isInstanceOf[((String, Int), Char)] should be(true)
   }
 
   koan("""Tuple access:
     Accessing the values in a tuple can be archived in different ways.
     In this test case we use the primitive notation by accessing the variables
     directly with indices.
-    
-    Solve the right value of the first three statements and the right representation with 
-    the right datatype of the two last statements""") {
+    """) {
     ("Hello", 42)._1 should be("Hello")
     ("Hello", 42)._2 should be(42)
     ("Hello" -> 42 -> 'a')._2 should be('a')
 
-    ("Hello" -> 42 -> 'a')._1 should be("(String, Int)")
-    ("Hello" -> 42 -> 'a')._1._2 should be(Int)
+    ("Hello" -> 42 -> 'a')._1 should be("Hello"->42)
+    ("Hello" -> 42 -> 'a')._1._2 should be(42)
   }
 
   koan("""Primitive datatype arithmetic:
@@ -62,17 +61,16 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     'a' + 1 should be('b')
 
     "Hello " + "World" should be("Hello World")
-    "Hello " + 5.6 should be("Hello5.6")
-    "Hello " * 3 should be("Hello Hello Hello")
+    "Hello " + 5.6 should be("Hello 5.6")
+    "Hello " * 3 should be("Hello Hello Hello ")
   }
 
   koan("""Casting:
     Like in every programming language you can cast a given value with a certain type
     to a similiar type. For example double to int. In Scala each primitive datatype has a
     method for each other datatype.
-    
-    Solve the right type of the first statements and the right value for the last one""") {
-    5.6.toInt should be(Int)
+    """) {
+    5.6.toInt should be(5)
 
     42.5.toInt should be(42)
   }

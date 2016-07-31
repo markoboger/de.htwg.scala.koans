@@ -5,26 +5,25 @@ import org.codetask.koanlib.CodeTaskSuite
 
 class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
   koan(""" Option Type:
-    The option type is inteded to represent something that may or may not have a value.
-    It is used by the type system to help you find certain type of errors. E.g. if something
+    The option type is intended to represent something that may or may not have a value.
+    It is used by the type system to help you find certain types of error. E.g. if something
     isn't supposed to have a value the type system will force you to deal with it.""") {
-    val lst = List(1, 2, 3, 4, 5)
-    lst.find(_ > 6) should be(None)
+    val list = List(1, 2, 3, 4, 5)
+    list.find(_ > 6) should be(None)
 
-    lst.find(_ > 3) should be(Some(4))
-    lst.find(_ > 6).get should be("java.util.NoSuchElementException")
+    list.find(_ > 3) should be(Some(4))
+ 
+    list.find(_ > 6).getOrElse(-1) should be(-1)
+    list.find(_ > 6).map(_ * 2) should be(None)
+    list.find(_ > 3).map(_ * 2) should be(Some(8))
 
-    lst.find(_ > 6).getOrElse(-1) should be(-1)
-    lst.find(_ > 6).map(_ * 2) should be(None)
-    lst.find(_ > 3).map(_ * 2) should be(Some(8))
-
-    val response = lst.find(_ > 3) match {
+    val response = list.find(_ > 3) match {
       case Some(n) => n * 5
       case None    => -1
     }
     response should be(20)
 
-    val result = lst.find(_ > 3)
+    val result = list.find(_ > 3)
     val ifResponse = if (result.nonEmpty) result.get * 5 else -1
     ifResponse should be(20)
   }
@@ -33,14 +32,14 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     Parametric functions are function which take types as arguments. In Java those are called Generics. Parametric
     functions are not the same as generics but for a mental model you can treat them as if they were.""") {
     def ident[A](x: A): A = x
-    ident(2) should be(Int)
-    ident(2.0) should be(Double)
-    ident("Hi") should be("java.lang.String")
+    ident(2).isInstanceOf[Int] should be(true)
+    ident(2.0).isInstanceOf[Int] should be(false)
+    ident("Hi").isInstanceOf[java.lang.String] should be(true)
 
     def makeTuple[A, B](a: A, b: B): (A, B) = (a, b)
-    makeTuple(1, 1) should be((Int, Int))
-    makeTuple(1, 1.0) should be((Int, Double))
-    makeTuple("Hi", 'a') should be("(java.lang.String, Char)")
+    makeTuple(1, 1).isInstanceOf[(Int, Int)] should be(true)
+    makeTuple(1, 1.0).isInstanceOf[(Int, Double)] should be(true)
+    makeTuple("Hi", 'a').isInstanceOf[(java.lang.String, Char)] should be(true)
   }
 
   koan(""" Subtyping:
@@ -48,9 +47,9 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     types in Scala are AnyVal, AnyRef and Any. Any class you could imagine is a subtype of those types. The compiler has
     to distinguish a type each time a user defines a variable. In the example the compiler has to find a type for the list entries
     Try to figure out which type the List has to be, write the result inside of two ("). """) {
-    List("Hi", 5) should be("List[Any]")
-    List(5, true) should be("List[AnyVal]")
-    List() should be("List[Nothing]")
+    List("Hi", 5).isInstanceOf[List[Any]] should be(true)
+    List(5, true).isInstanceOf[List[AnyVal]]
+    List().isInstanceOf[List[Nothing]] should be(true)
   }
 
   koan(""" Variable Argument Lists:
@@ -61,12 +60,12 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     def average(n: Double*) = n.sum / n.length
     average(1, 2, 3, 4, 5) should be(3.0)
 
-    val lst = List[Double](1, 2, 3, 4, 5)
+    val list = List[Double](1, 2, 3, 4, 5)
 
-    def averageList(lst: List[Double]): Double = lst.sum / lst.length
-    averageList(lst) should be(3.0)
+    def averageList(list: List[Double]): Double = list.sum / list.length
+    averageList(list) should be(3.0)
 
-    average(lst: _*) should be(3.0)
+    average(list: _*) should be(3.0)
   }
 
   koan("""Mutability:

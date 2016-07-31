@@ -111,7 +111,7 @@ class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
     case class StudentWithSchoolclasses(name: String, age: Int, classes: List[String] {})
     val studentsWithClasses = List(StudentWithSchoolclasses("Tim", 22, List("sport", "english")), StudentWithSchoolclasses("Hans", 22, List("biology", "german")), StudentWithSchoolclasses("Jens", 28, List("german")))
     val studentsWithOneClass = for (StudentWithSchoolclasses(n, _, List(a)) <- studentsWithClasses) yield (n, List(a))
-    studentsWithOneClass should be(List("Jens", List("german")))
+    studentsWithOneClass should be(List(("Jens", List("german"))))
   }
 
   koan(""" Zipped Type:
@@ -126,7 +126,7 @@ class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
     val a = List(1, 2, 3)
     val b = List("a", "b", "c")
 
-    a.zip(b) should be(List((1, a), (2, b), (3, "c")))
+    a.zip(b) should be(List((1, "a"), (2, "b"), (3, "c")))
     a.zip(b).map(t => t._2 * t._1)
 
     val response = (a, b).zipped.map((integer, string) => string * integer)
