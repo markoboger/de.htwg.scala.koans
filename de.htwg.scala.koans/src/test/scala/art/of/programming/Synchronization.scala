@@ -11,7 +11,7 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
     The thread should sleep after each print statement for 200 ms.
     Outside of the thread definition write a loop that iterates over the range of 'A'..'Z' which prints
     again each element. Add a sleep interval of 100 ms to this loop.""") {
-    // solve
+    //solve
     object Multithreading {
       def main(args: Array[String]) = {
         new Thread(new Runnable() {
@@ -29,7 +29,7 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
         }
       }
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Join Threads in Multithreaded Environment)
@@ -41,7 +41,7 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
     Try to print "done" when all threads are finished.    
     Note: Use the feature of joining the threads.
     """) {
-    // solve
+    //solve
     object Multithreading {
       def main(args: Array[String]) = {
         val threads = for (i <- 1 to 10) yield {
@@ -56,7 +56,7 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
         println("done")
       }
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (synchronized blocks) 
@@ -72,19 +72,19 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
         val threads = for (i <- 1 to 10) yield {
           new Thread(new Runnable() {
             def run {
-              // solve
+              //solve
               for (j <- 1 to 1000) Multithreading.synchronized {
                 cnt += 1
               }
-              // endsolve
+              //endsolve
             }
           })
         }
         threads.foreach(_.start())
         threads.foreach(_.join())
-        // test
+        //test
         println(cnt) should be(10000)
-        // endtest
+        //endtest
       }
     }
   }
@@ -103,24 +103,24 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
 
     object Multithreading {
       def main(args: Array[String]) = {
-        // solve
+        //solve
         val aInt = new AtomicInteger(0)
         
         val threads = for (i <- 1 to 10) yield {
           new Thread(new Runnable() {
             def run {
-              // solve
+              //solve
               for (j <- 1 to 10000) aInt.addAndGet(1)
             
             }
           })
-        // endsolve
+        //endsolve
         }
         threads.foreach(_.start())
         threads.foreach(_.join())
-        // test
+        //test
         println(aInt.get) should be(100000)
-        // endtest
+        //endtest
       }
     }
 
@@ -132,13 +132,13 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
         val threads = for (i <- 1 to 10) yield {
           new Thread(new Runnable() {
             def run {
-              // solve
+              //solve
               var c = 0
               
               for (j <- 1 to 10000) c += 1
               
               FasterMultithreading.synchronized { cnt += c }
-              // endsolve
+              //endsolve
             }
           })
         }
@@ -165,7 +165,7 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
 
     object Multithreading {
       def main(args: Array[String]) = {
-        // solve
+        //solve
         val es = Executors.newFixedThreadPool(4)
         val futures = for (i <- 30 to 15 by -1) yield {
           es.submit(new Callable[Int] {
@@ -174,7 +174,7 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
         }
         futures.foreach(f => println(f.get))
         es.shutdown()
-        // endsolve
+        //endsolve
       }
 
       def fib(n: Int): Int = if (n < 2) 1 else fib(n - 1) + fib(n - 2)
@@ -193,11 +193,11 @@ class Synchronization extends CodeTaskSuite("Multithreading", 13) {
     """) {
     object Multithreading {
       def main(args: Array[String]) = {
-        // solve
+        //solve
         val values = for (i <- (30 to 15 by -1).par) yield {
           fib(i)
         }
-        // endsolve
+        //endsolve
         println("unordered")
         values.foreach(println)
         println("ordered")

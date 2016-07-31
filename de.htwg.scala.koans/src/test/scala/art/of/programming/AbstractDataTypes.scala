@@ -12,14 +12,14 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     3. checking if it is empty
     4. looking (peeking!) at the first element of it
   """) {
-    // solve
+    //solve
     trait Stack[A] {
       def push(elem: A)
       def pop()
       def isEmpty: Boolean
       def peek: A
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Queue Trait)
@@ -29,14 +29,14 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     3. checking if it is empty
     4. looking (peeking!) at the first element of it
     """) {
-    // solve
+    //solve
     trait Queue[A] {
       def enqueue(elem: A): Unit
       def dequeue(): A
       def isEmpty: Boolean
       def peek: A
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Implement Custom Stack)
@@ -47,7 +47,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     class MyStack[A: Manifest] extends Stack[A] {
       private val data = new Array[A](10)
       private var top = 0
-      // solve
+      //solve
 
       def push(elem: A): Unit = {
         data(top) = elem
@@ -59,12 +59,12 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
       }
       def isEmpty: Boolean = top == 0
       def peek: A = data(top - 1)
-      // endsolve
+      //endsolve
     }
    
 
     val s = new MyStack[Int]
-    // test
+    //test
     s.isEmpty should be(true)
     s.push(1)
     s.push(2)
@@ -76,7 +76,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     s.pop() should be(4)
     s.pop() should be(3)
     s.isEmpty should be(false)
-    // endtest
+    //endtest
 
     trait Stack[A] {
       def push(elem: A): Unit
@@ -95,7 +95,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
       private var back = 0
       private var front = 0
 
-      // solve
+      //solve
       def enqueue(elem: A): Unit = {
         data(back) = elem
         back = (back + 1) % data.length
@@ -107,7 +107,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
       }
       def isEmpty: Boolean = front == back
       def peek: A = data(front)
-      // endsolve
+      //endsolve
     }
     
 
@@ -119,7 +119,7 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     }
 
     val q = new MyQueue[Int]
-    // test
+    //test
     q.isEmpty should be(true)
     q.enqueue(1)
     q.enqueue(2)
@@ -131,6 +131,6 @@ class AbstractDataTypes extends CodeTaskSuite("Abstract Data Types", 14) {
     q.dequeue() should be(2)
     q.dequeue() should be(3)
     q.isEmpty should be(false)
-    // endtest
+    //endtest
   }
 }

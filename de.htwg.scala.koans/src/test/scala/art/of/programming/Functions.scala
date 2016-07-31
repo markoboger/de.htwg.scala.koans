@@ -65,9 +65,9 @@ class Functions extends CodeTaskSuite("Functions", 3) {
       (hours, minutes)
       //endsolve
     }
-    // test
+    //test
     splitTime("12:55") should be((12, 55))
-    // endtest
+    //endtest
   }
 
   koan(""" Type Declarations (Alias)

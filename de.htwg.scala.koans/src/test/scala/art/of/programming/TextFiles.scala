@@ -8,11 +8,11 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
     Write down the import statements for Date, NoSuchElementException, readInt and every collection.
     Try to enter the necessary statements with full the package names (just for testing purpose), e.g. scala.math.BigInt instead of math.BigInt."""){
     {
-      // solve
+      //solve
       import java.util.{Date, NoSuchElementException}
       import scala.io.StdIn.readInt
       import scala.collection._
-      // endsolve
+      //endsolve
     }
   }
 
@@ -60,16 +60,16 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
     1
     """){
     import scala.io.Source  
-    // solve 
+    //solve 
     val source = Source.fromFile("fiveNums.txt")
     val lines = source.getLines
     val nums = lines.filter(_.nonEmpty).map(_.toInt)  
     source.close
-    // endsolve
+    //endsolve
     
-    // test
+    //test
     nums should be(15)
-    // endtest
+    //endtest
   }
 
   codetask(""" Exercise: (Catching Exceptions)
@@ -78,13 +78,13 @@ class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
     
     Note: Don't worry about closing the file descriptor this time."""){
     import io.Source
-    // solve
+    //solve
     try{
       val source = Source.fromFile("file.txt")
     } catch {
       case e:java.io.FileNotFoundException =>  e.printStackTrace()
     }   
-    // endsolve
+    //endsolve
   }
 
   koan(""" Java Scanner:

@@ -49,7 +49,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
 
     }
 
-    // solve
+    //solve
     class Rectangle(val width: Double, val heigth: Double, val color: Color) extends Shape(color) {
       override def area: Double = width * heigth
       override def perimeter: Double = 2 * (width + heigth)
@@ -67,7 +67,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
         println("draw circle")
       }
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Force Immutability)
@@ -76,13 +76,13 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     the whole class against the initial functional idea.
     Firstly try to write an immutable class named Immutable without a body and argumentlist
     Secondly try to write an immutable method named immutable with an empty body and argumentlist.""") {
-    // solve
+    //solve
     final class Immutable
     
     class ImmutableMethod() {
       final def immutable() {}
     }
-    // endsolve
+    //endsolve
 
   }
 
@@ -108,7 +108,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
         whipTail => print tail whipping
         walk => print walking
         run => print running""") {
-    // solve
+    //solve
     abstract class Animal {
       def speak
     }
@@ -128,7 +128,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
       def walk = println("walking")
       def run = println("running")
     }
-    // endsolve
+    //endsolve
   }
 
   codetask("""Exercise: (Trait addition during object instantiation)
@@ -139,7 +139,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     2. A trait "Angry" that just prints "You won't like me..."
     3. An object Hulk with a variable (val) that instantiates an Object from The class
       with the additional trait.""") {
-    // solve
+    //solve
     class DavidBanner
  
     trait Angry {
@@ -149,19 +149,19 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     object Hulk {
       val hulk = new DavidBanner with Angry
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Abstract and concrete fields in traits)
     Write a trait "Trait" which has two fields:
       abstractField of type Int
       concreteField with a value of 10""") {
-    // solve
+    //solve
     trait Trait {
       var abstractField: Int
       val concreteField = 10
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Excercise: (Using a trait like a Java abstract class)
@@ -176,7 +176,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
       def comeToMaster
     }
 
-    // solve
+    //solve
     class Dog extends Pet {
       def comeToMaster = println("I'm coming!")
     }
@@ -185,17 +185,17 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
       override def speak = println("meow")
       def comeToMaster = println("That's not gonna happen.")
     }
-    // endsolve
+    //endsolve
 
     object Test {
       val zeus = new Dog
       val cleopatra = new Cat
-      // test
+      //test
       zeus.comeToMaster == "I'm coming!" should be(true)
      
       cleopatra.comeToMaster == "That's not gonna happen." should be(true)
       cleopatra.speak == "meow" should be(true)
-      // endtest
+      //endtest
     }
   }
 
@@ -205,7 +205,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     1. A trait "Tail" with wagTail
     2. An abstract class "Pet" with the abstract speak and ownerIsHome 
     3. An explicit class "Dog"""") {
-    // solve
+    //solve
     trait Tail {
       def wagTail = println("tail is wagging")
     }
@@ -218,15 +218,15 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     class Dog extends Pet with Tail {
       def speak { println("woof") }
     }
-    // endsolve
+    //endsolve
 
     object Test {
       val zeus = new Dog
-      // test
+      //test
       zeus.ownerIsHome == "excited" should be(true)
       zeus.wagTail == "tail is wagging" should be(true)
       zeus.speak == "woof" should be(true)
-      // endtest
+      //endtest
     }
   }
 
@@ -242,14 +242,14 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     Choose "A" as your parametric type and in case where you need "elem" for an element.
     
     Tip: If you unsure how to write this, take a look in a previous chapter. We discussed this topic with functions/methods""") {
-    // solve
+    //solve
     trait Stack[A] {
       def push(elem: A)
       def pop(): A
       def isEmpty: Boolean
       def peek: A
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Advanced Parametric Functions/Methods) 
@@ -264,7 +264,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     Int, Double and so on.
     
     Note: This implementation does not show ability to change the order in which the elements should be sorted (see next example)""") {
-    // solve
+    //solve
     def bubbleSort[A <% Ordered[A]](a: Array[A]) 
     {
       for (i <- 0 until a.length - 1) {
@@ -277,7 +277,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
         }
       }
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Advanced Parametric Functions/Methods)
@@ -287,7 +287,7 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
     
     def bubbleSort[A](a: Array[A])(func: (A, A) => Boolean) 
     {
-      // solve
+      //solve
       for (i <- 0 until a.length - 1) {
         for (j <- 0 until a.length - 1 - i) {
          
@@ -299,15 +299,15 @@ class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientati
           }
         }
       }
-      // endsolve
+      //endsolve
     }
     val nums = Array(15, 1, 9, 4, 99)
     bubbleSort(nums)(_ > _)
-    // test
+    //test
     nums should be(Array(99, 15, 9, 4, 1))
     bubbleSort(nums)(_ < _)
     nums should be(Array(1, 4, 9, 15, 99))
-    // endtest
+    //endtest
   }
 
   codetask(""" Exercise: (Loan Pattern)

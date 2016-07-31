@@ -29,19 +29,19 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     
     Note: The method has an Unit return type.""") {
     def fillArray(arr: Array[Int], value: Int, i: Int): Unit = {
-      // solve
+      //solve
       if (i < arr.length) {
         arr(i) = value
         fillArray(arr, value, i + 1)
       }
-      // endsolve
+      //endsolve
     }
 
     val arr = Array(1, 1, 1, 1)
     fillArray(arr, 0, 0)
-    // test
+    //test
     arr should be(Array(0, 0, 0, 0))
-    // endtest
+    //endtest
   }
 
   codetask(""" Exercise: (Operate on array with higher order methods)
@@ -49,19 +49,19 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     
     Note: Make use of the Functions chapter section Higher order methods.""") {
     def operateOnArray(arr: Array[Int], i: Int, f: (Int, Int) => Int): Int = {
-      // solve
+      //solve
       if (i < arr.length - 1) {
         f(arr(i), operateOnArray(arr, i + 1, f))
       } else {
         arr(i)
       }
-      // endsolve
+      //endsolve
     }
 
     val arr = Array(1, 2, 3, 4)
-    // test
+    //test
     operateOnArray(arr, 0, _ + _) should be(10)
-    // endtest
+    //endtest
   }
 
   codetask(""" Exercise: (Appending elements to a list)
@@ -71,10 +71,10 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     import io.StdIn._
 
     def inputList(n: Int): List[Int] = {
-      // solve
+      //solve
       if (n < 1) Nil
       else readInt :: inputList(n - 1)
-      // endsolve
+      //endsolve
     }
   }
 
@@ -92,16 +92,16 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     
    Note: Make use of the Functions chapter section Higher Functions.""") {
     def operateOnList(lst: List[Int], f: (Int, Int) => Int): Int = {
-      // solve
+      //solve
       if (lst == Nil) 0
       else f(lst.head, operateOnList(lst.tail, f))
-      // endsolve
+      //endsolve
     }
 
     val lst = List(1, 2, 3, 4)
-    // test
+    //test
     operateOnList(lst, _ + _) should be(10)
-    // endtest
+    //endtest
   }
 
   koan(""" Fill/Tabulate Method:
@@ -119,16 +119,16 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     Write a custom implementation of a fill method for Lists.
     Make use of recursion""") {
     def fillList(n: Int, value: Double): List[Double] = {
-      // solve
+      //solve
       if (n < 1) Nil
       else value :: fillList(n - 1, value)
-      // endsolve
+      //endsolve
     }
 
     val lst = fillList(3, 2.0)
-    // test
+    //test
     lst should be(List(2.0, 2.0, 2.0))
-    // endtest
+    //endtest
   }
 
   koan(""" Collection Methods: Data Access
@@ -143,7 +143,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     a.drop(2) should be(Array(0, 1, 2, 3))
     a.init should be(Array(5, 2, 0, 1, 2))
     a.slice(2, 4) should be(Array(0, 1))
-//    a.splitAt(3) should be((Array(5, 2, 0), Array(1, 2, 3)))
+//   a.splitAt(3) should be((Array(5, 2, 0), Array(1, 2, 3)))
     a.take(3) should be(Array(5, 2, 0))
     a.dropRight(3) should be(Array(5, 2, 0))
     a.takeRight(3) should be(Array(1, 2, 3))
@@ -238,7 +238,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     b.indexWhere(_ % 2 == 0) should be(1)
     b.lastIndexWhere(_ % 2 == 1) should be(2)
 
-//    b.partition(_ % 2 == 0) should be((Array(2), Array(1, 3)))
+//   b.partition(_ % 2 == 0) should be((Array(2), Array(1, 3)))
     val (even, odd) = b.partition(_ % 2 == 0)
     odd should be(Array(1, 3))
 

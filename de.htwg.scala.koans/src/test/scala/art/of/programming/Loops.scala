@@ -38,7 +38,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     iterated and used in loops.
     
     Try writing down the right types of the first 5 statements and the actual values of the last two.""") {
-//    0 to 9 should be("scala.collection.immutable.Range")
+//   0 to 9 should be("scala.collection.immutable.Range")
     0 until 9 should be("scala.collection.immutable.Range")
     Array(1, 2, 3).indices should be("scala.collection.immutable.Range")
     'a' to 'z' should be("scala.collection.immutable.NumericRange.Inclusive[Char]")
@@ -127,13 +127,13 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     String ("_"). The result should an array with the concatenated names.""") {
     val lst = List(("Max", "Mustermann"), ("Hans", "Werner"), ("Klaus", "Mann"))
 
-    // solve
+    //solve
     val response = for ((firstname, lastname) <- lst) yield firstname + "_" + lastname
-    // endsolve
+    //endsolve
 
-    // test
+    //test
     response should be(List("Max_Mustermann", "Hans_Werner", "Klaus_Mann"))
-    // endtest
+    //endtest
   }
 
   koan(""" Variable declaration in for loops:

@@ -54,7 +54,7 @@ class ObjectOrientation extends CodeTaskSuite("Basic Object Orientation", 10) {
     }
 
     class AdvancedBank(name: String, code: String) {
-      // solve
+      //solve
       private var mSafeCode = code
 
       def safeCode = mSafeCode
@@ -62,7 +62,7 @@ class ObjectOrientation extends CodeTaskSuite("Basic Object Orientation", 10) {
         mSafeCode = safeCode
       }
     }
-    // endsolve
+    //endsolve
   }
 
   koan(""" Operator overloading and special methods:
@@ -120,32 +120,32 @@ class ObjectOrientation extends CodeTaskSuite("Basic Object Orientation", 10) {
   codetask(""" Exercise: (Object implementation)
     Write an object (named TestObject) which increments a member variable by 1. The starting value of the 
     member variable should be 0.""") {
-    // solve
+    //solve
     object TestObject {
       var i = 0
       def increment {
         i += 1
       }
     }
-    // endsolve
+    //endsolve
 
-    // test
+    //test
     TestObject.i should be(0)
     TestObject.increment
     TestObject.i should be(1)
-    // endtest
+    //endtest
   }
 
   codetask(""" Exercise: (Application Entrypoint)
     Write an Application with an entry point that prints the String "Hello World!" when it's ran.
     Note: Use an object.""") {
-    // solve
+    //solve
     object App {
       def main(args: Array[String]) {
         println("Hello World!")
       }
     }
-    // endsolve
+    //endsolve
   }
 
   codetask(""" Exercise: (Companion Object)
@@ -166,10 +166,10 @@ class ObjectOrientation extends CodeTaskSuite("Basic Object Orientation", 10) {
       def print(): String = "(" + x + ", " + y + ", " + z + ")"
     }
 
-    // solve
+    //solve
     object Vect3 {
       def apply(x: Double, y: Double, z: Double) = new Vect3(x, y, z)
     }
-    // endsolve
+    //endsolve
   }
 }
