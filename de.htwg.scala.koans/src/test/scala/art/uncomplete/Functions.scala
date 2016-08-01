@@ -1,6 +1,5 @@
-package art.of.programming
+package art.uncomplete
 
-import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class Functions extends CodeTaskSuite("Functions", 3) {

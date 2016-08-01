@@ -1,7 +1,7 @@
-package art.of.programming
+package art.uncomplete
 
-import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
+import scala.Vector
 
 class Loops extends CodeTaskSuite("Loops", 7) {
   koan(""" While loop:

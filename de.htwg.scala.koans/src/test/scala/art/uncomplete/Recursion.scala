@@ -1,6 +1,5 @@
-package art.of.programming
+package art.uncomplete
 
-import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class Recursion extends CodeTaskSuite("Recursion", 4) {

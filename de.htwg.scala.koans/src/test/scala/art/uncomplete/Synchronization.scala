@@ -1,7 +1,8 @@
-package art.of.programming
+package art.uncomplete
 
-import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
+import java.util.concurrent.Callable
+import java.util.concurrent.atomic.AtomicInteger
 
 class Synchronization extends CodeTaskSuite("Multithreading", 13) {
 

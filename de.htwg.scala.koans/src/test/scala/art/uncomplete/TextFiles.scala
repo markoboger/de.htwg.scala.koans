@@ -1,7 +1,10 @@
-package art.of.programming
+package art.uncomplete
 
-import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
+import java.io.File
+import java.io.FileWriter
+import java.io.PrintWriter
+import java.util.Scanner
 
 class TextFiles extends CodeTaskSuite("Textfiles - IO", 8) {
   codetask("""Exercise: (Import statements)

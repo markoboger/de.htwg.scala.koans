@@ -1,7 +1,12 @@
-package art.of.programming
+package art.uncomplete
 
-import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
+import java.awt.Color
+import java.awt.Graphics2D
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileNotFoundException
+import java.io.IOException
 
 class AdvancedObjectOrientation extends CodeTaskSuite("Advanced Object Orientation", 11) {
   codetask(""" Exercise: (Inheritance and Polymorphism)
