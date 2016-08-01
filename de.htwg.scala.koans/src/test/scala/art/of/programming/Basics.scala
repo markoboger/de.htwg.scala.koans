@@ -10,7 +10,9 @@ It is based on a book with the same title by Mark C. Lewis and a set of videos t
 This course combines the videos by Mark C. Lewis with interactive code snippets, called koans. 
 You should listen to the video, then fill in the blanks in the code that follows.
 For some chapters we also provide little programming exercises we call codetasks. 
-Here you need to fill in a few lines of code to pass a test. Let's get started: """) {}
+Here you need to fill in a few lines of code to pass a test. Let's get started: """) {
+    2 + 3 should be(5)
+  }
 
   video("Objects and associated methods", "OdHJBxfOIfs")
   
