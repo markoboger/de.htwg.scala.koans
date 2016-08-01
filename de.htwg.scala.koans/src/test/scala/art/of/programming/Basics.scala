@@ -4,7 +4,7 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class Basics extends CodeTaskSuite("Basics", 1) {
-  
+
   koan("""Welcome to this course on the Art of Programming using Scala. 
 It is based on a book with the same title by Mark C. Lewis and a set of videos that accompany the book. 
 This course combines the videos by Mark C. Lewis with interactive code snippets, called koans. 
@@ -15,22 +15,22 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
   }
 
   video("Objects and associated methods", "OdHJBxfOIfs")
-  
+
   koan("""Calls on Integers: Try out some basic operations on Integers""") {
     5.6.round should be(6)
     5.6.toInt should be(5)
-    
+
     4.+(5) should be(9)
-    3+8 should be(11)
-    
+    3 + 8 should be(11)
+
   }
-  
+
   video("Scala Types", "yrpQnVGMX1g")
-  
+
   koan("""Primitiv Datatypes: 
     Scala has a set of primitve datatypes which will 
     be familiar from other programming languages like 
-    java, c++ and so on. The difference in Scala is 
+    Java, C++ and so on. The difference in Scala is 
     that all of those datatypes are implemented as Classes.
     
     Solve the type of the following values""") {
@@ -39,7 +39,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     (5.1F).isInstanceOf[Float] should be(true)
     5000L.isInstanceOf[Long] should be(true)
     'x'.isInstanceOf[Char] should be(true)
-    true .isInstanceOf[Boolean] should be(true)
+    true.isInstanceOf[Boolean] should be(true)
     "Hello".isInstanceOf[String] should be(true)
   }
 
@@ -66,7 +66,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     ("Hello", 42)._2 should be(42)
     ("Hello" -> 42 -> 'a')._2 should be('a')
 
-    ("Hello" -> 42 -> 'a')._1 should be("Hello"->42)
+    ("Hello" -> 42 -> 'a')._1 should be("Hello" -> 42)
     ("Hello" -> 42 -> 'a')._1._2 should be(42)
   }
 
@@ -87,7 +87,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     "Hello " + 5.6 should be("Hello 5.6")
     "Hello " * 3 should be("Hello Hello Hello ")
   }
-  
+
   video("Additional Integer Types", "dJPxiFFZypU")
 
   koan("""Casting:
@@ -99,7 +99,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
 
     42.5.toInt should be(42)
   }
-   
+
   video("Details of numbers", "2dImF4DCWlY")
 
   koan("""Type Limits:
@@ -116,7 +116,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     Char.MaxValue.toInt should be(65535)
     Char.MinValue.toInt should be(0)
   }
-  
+
   video("Binary Arithmetic and presentation", "212jDl_5B7E")
   video("Signed and unsigned values", "qTAw30GgDZs")
 
@@ -128,7 +128,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     42.toHexString should be("2a")
     -42.toBinaryString should be("11111111111111111111111111010110")
   }
-  
+
   video("Floating point numbers and math libary", "LrU7mLiTWKo")
 
   koan(""" Mathematical Functions:
@@ -140,7 +140,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     scala.math.E should be(2.718281828459045)
     scala.math.sqrt(9) should be(3.0)
   }
-  
+
   video("Mental model of variables", "TLfRT5Ab7d0")
   video("Values and Variables", "xJNb8UhrMcY")
 
@@ -164,7 +164,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     firstName should be("Max")
     lastName should be("Mustermann")
   }
-  
+
   video("Details of Strings and Chars", "hkPwD4HUK_0")
 
   koan(""" String Interpolation:
@@ -188,7 +188,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
   video("Basic string methods", "DDlVziE243A")
   video("Immutability of Strings", "jZOg0P8-26E")
   video("Sequential Execution and string example", "ReS2nusS7R8")
-  
+
   koan(""" String Methods:
     Due to the fact that Scala is using the String implementation of Java all methods are the same.
     If you're familiar with Java and the String Class then you know them already.""") {
