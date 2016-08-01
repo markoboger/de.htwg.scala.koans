@@ -41,6 +41,15 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     'x'.isInstanceOf[Char] should be(true)
     true.isInstanceOf[Boolean] should be(true)
     "Hello".isInstanceOf[String] should be(true)
+    
+    'a' + 1 should be('b')
+    'd' - 'c' should be(1)
+    'a'.toInt should be(97)
+    98.toChar should be('b')
+    
+    "a" + "b" should be("ab")
+    "a" + 1 should be("a1")
+    "a" * 3 should be("aaa") 
   }
 
   koan("""Tuple:
