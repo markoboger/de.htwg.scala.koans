@@ -4,8 +4,27 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class Basics extends CodeTaskSuite("Basics", 1) {
+  
+  koan("""Welcome to this course on the Art of Programming using Scala. 
+It is based on a book with the same title by Mark C. Lewis and a set of videos that accompany the book. 
+This course combines the videos by Mark C. Lewis with interactive code snippets, called koans. 
+You should listen to the video, then fill in the blanks in the code that follows.
+For some chapters we also provide little programming exercises we call codetasks. 
+Here you need to fill in a few lines of code to pass a test. Let's get started: """) {}
+
   video("Objects and associated methods", "OdHJBxfOIfs")
+  
+  koan("""Calls on Integers: Try out some basic operations on Integers""") {
+    5.6.round should be(6)
+    5.6.toInt should be(5)
+    
+    4.+(5) should be(9)
+    3+8 should be(11)
+    
+  }
+  
   video("Scala Types", "yrpQnVGMX1g")
+  
   koan("""Primitiv Datatypes: 
     Scala has a set of primitve datatypes which will 
     be familiar from other programming languages like 
