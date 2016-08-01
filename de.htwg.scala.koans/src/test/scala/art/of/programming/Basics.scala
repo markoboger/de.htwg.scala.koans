@@ -4,6 +4,8 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class Basics extends CodeTaskSuite("Basics", 1) {
+  video("Objects and associated methods", "OdHJBxfOIfs")
+  video("Scala Types", "yrpQnVGMX1g")
   koan("""Primitiv Datatypes: 
     Scala has a set of primitve datatypes which will 
     be familiar from other programming languages like 
@@ -64,6 +66,8 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     "Hello " + 5.6 should be("Hello 5.6")
     "Hello " * 3 should be("Hello Hello Hello ")
   }
+  
+  video("Additional Integer Types", "dJPxiFFZypU")
 
   koan("""Casting:
     Like in every programming language you can cast a given value with a certain type
@@ -74,6 +78,8 @@ class Basics extends CodeTaskSuite("Basics", 1) {
 
     42.5.toInt should be(42)
   }
+   
+  video("Details of numbers", "2dImF4DCWlY")
 
   koan("""Type Limits:
     Types have a certain amount of bytes reserved for their value. Due to this restriction 
@@ -89,6 +95,9 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     Char.MaxValue.toInt should be(65535)
     Char.MinValue.toInt should be(0)
   }
+  
+  video("Binary Arithmetic and presentation", "212jDl_5B7E")
+  video("Signed and unsigned values", "qTAw30GgDZs")
 
   koan("""Value presentation:
     
@@ -98,6 +107,8 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     42.toHexString should be("2a")
     -42.toBinaryString should be("11111111111111111111111111010110")
   }
+  
+  video("Floating point numbers and math libary", "LrU7mLiTWKo")
 
   koan(""" Mathematical Functions:
     Scala delivers a special Math Library like many other programming languages.
@@ -108,6 +119,9 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     scala.math.E should be(2.718281828459045)
     scala.math.sqrt(9) should be(3.0)
   }
+  
+  video("Mental model of variables", "TLfRT5Ab7d0")
+  video("Values and Variables", "xJNb8UhrMcY")
 
   koan(""" Variables and Pattern matching:
     There are two variable concepts in Scala, Val and Var. Val declares a constant/immutable variable.
@@ -129,11 +143,8 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     firstName should be("Max")
     lastName should be("Mustermann")
   }
-
-  koan("""Arithmetic problem:\n
-    """) {
-    1.0 - 0.9 - 0.1 should be(-2.7755575615628914E-17)
-  }
+  
+  video("Details of Strings and Chars", "hkPwD4HUK_0")
 
   koan(""" String Interpolation:
     Scala delivers a special string interpolation operator (s") which offers the chance
@@ -153,6 +164,10 @@ class Basics extends CodeTaskSuite("Basics", 1) {
     s"${a + 5} $b $c" should be("10 10 x")
   }
 
+  video("Basic string methods", "DDlVziE243A")
+  video("Immutability of Strings", "jZOg0P8-26E")
+  video("Sequential Execution and string example", "ReS2nusS7R8")
+  
   koan(""" String Methods:
     Due to the fact that Scala is using the String implementation of Java all methods are the same.
     If you're familiar with Java and the String Class then you know them already.""") {
