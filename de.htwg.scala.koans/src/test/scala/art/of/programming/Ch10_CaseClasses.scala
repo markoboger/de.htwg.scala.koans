@@ -3,7 +3,7 @@ package art.of.programming
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
-class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
+class Ch10_CaseClasses extends CodeTaskSuite("Case Classes", 9) {
   
   video("Case classes", "V6WHvBerbDw")
   video("Creating case classes", "4HCFckV5OQ4")

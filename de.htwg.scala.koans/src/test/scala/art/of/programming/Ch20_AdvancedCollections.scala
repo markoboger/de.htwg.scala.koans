@@ -3,7 +3,7 @@ package art.of.programming
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
-class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
+class Ch20_AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
   video("Buffer Collection", "aQbMRUmsBNY")
   koan(""" Buffer: 
     The idea of a buffer is very similar to arrays. They have a specific order and you can

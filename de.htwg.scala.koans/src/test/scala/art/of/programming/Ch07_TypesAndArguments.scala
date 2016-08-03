@@ -3,7 +3,7 @@ package art.of.programming
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
-class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
+class Ch07_TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
   video("Option Type", "i1cXwWN7Mjk")
   koan(""" Option Type:
     The option type is intended to represent something that may or may not have a value.

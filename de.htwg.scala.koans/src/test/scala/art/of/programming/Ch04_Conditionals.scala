@@ -3,7 +3,7 @@ package art.of.programming
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
-class Conditionals extends CodeTaskSuite("Conditionals", 2) {
+class Ch04_Conditionals extends CodeTaskSuite("Conditionals", 2) {
   video("Conditionals", "DYUJGtNcuYk")
   koan(""" If conditional:
     The If conditional is in almost everything the same as in any other programming language. 

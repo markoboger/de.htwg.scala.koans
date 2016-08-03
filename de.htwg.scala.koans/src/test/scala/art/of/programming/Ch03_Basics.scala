@@ -3,7 +3,7 @@ package art.of.programming
 import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
-class Basics extends CodeTaskSuite("Scala Basics", 1) {
+class Ch03_Basics extends CodeTaskSuite("Scala Basics", 1) {
 
   koan("""Welcome to this course on the Art of Programming using Scala. 
 It is based on a book with the same title by Mark C. Lewis and a set of videos that accompany the book. 

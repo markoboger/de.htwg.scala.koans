@@ -1,8 +1,11 @@
-package art.uncomplete
+package art.of.programming
 
 import org.codetask.koanlib.CodeTaskSuite
 
-class Functions extends CodeTaskSuite("Functions", 3) {
+class Ch05_Functions extends CodeTaskSuite("Functions", 3) {
+  
+  video("Simple function definition", "rCQN_LRw2Ds")
+  video("Side Effects", "a5hUmOdsDN4")
   koan(""" Functions:
     The bread and butter of Scala are functions easily that it's a functional programming language. 
     To create a function you define a function with the keyword def. A function can consist of a single 
@@ -19,6 +22,7 @@ class Functions extends CodeTaskSuite("Functions", 3) {
     add(3, 2, 1) should be(6)
   }
 
+  video("Lambda Expressions", "7a6MtgFNaWg")
   koan(""" Lambda Literals: 
     Lambda literals are function literals. You could see it as a inline function.
     They are mostly defined (exception s. last statement) with a symbol called rocket (=>).
@@ -34,6 +38,7 @@ class Functions extends CodeTaskSuite("Functions", 3) {
     func(25) should be(50)
   }
 
+  video("Higher order functions", "D8o96hXjBBs")
   koan(""" Higher Order Functions:
     Higher order functions are based on lambda literals. 
     Basic usecase: 
@@ -53,6 +58,7 @@ class Functions extends CodeTaskSuite("Functions", 3) {
     combine(2, 3, 4, _ min _) should be(2)
   }
 
+  video("Function example with strings", "5Y0_fo3Jogk")
   codetask(""" Exercise: (String operations) 
     Write a function which disassembles a given time string. The result should be a tuple containing 
     the hours and minutes""") {
@@ -68,7 +74,8 @@ class Functions extends CodeTaskSuite("Functions", 3) {
     splitTime("12:55") should be((12, 55))
     //endtest
   }
-
+  
+  video("Type declarations", "NrgF2vnGOsU")
   koan(""" Type Declarations (Alias)
     Scala offers with the keyword type a way to shorten variable types with aliases. In the example below 
     you see how to alias a three tuple. Aliases can make your code more readable. Keep in mind that aliaes don't
