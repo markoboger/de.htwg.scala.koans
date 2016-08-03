@@ -4,18 +4,20 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class Conditionals extends CodeTaskSuite("Conditionals", 2) {
+  video("Conditionals", "DYUJGtNcuYk")
   koan(""" If conditional:
     The If conditional is in almost everything the same as in any other programming language. 
-    The only fact which differs from some other languages is that the conditional returns always a value.
-    The last statement in the code block is the result.      
+    The only fact which differs from some other languages is that the conditional always returns a value.
+    The last expression in the code block is returned as result.      
     In some cases this is very benefitial. For example if you don't want to introduce a variable to store
     a result. In certain languages you always have to declare a variable in which you store the value of the
-    conditional, in scala you can use a val to store the result of it (see example).""") {
+    conditional, in scala you can use a val to store the result of it.""") {
     val number = 12
     val response = if (number >= 0) "Positive Number" else "Negative Number"
     response should be("Positive Number")
   }
 
+  video("Code Blocks", "WUOV9Km0o_8")
   koan(""" Code block:
     Code blocks are expressions seperated from the code with curly braces. Examples for code blocks
     are method bodies, conditionals, loops or static code blocks. The result of a code block is always the
@@ -39,6 +41,7 @@ class Conditionals extends CodeTaskSuite("Conditionals", 2) {
     conditionResponse should be("Negative Number")
   }
 
+  video("Comparison Operators", "XtDbWYHOQGg")
   koan(""" Comparision Operator:
     In Scala the basic comparison operators are implemented on the primitiv datatypes. 
     To compare strings there are to seperate comparing methods. The first one is to check for equality value wise(see 6th and 7th statement). 
@@ -58,6 +61,7 @@ class Conditionals extends CodeTaskSuite("Conditionals", 2) {
     "hi" eq "hi" should be(true)
   }
 
+  video("Boolean logic", "qNly4zSs9-4")
   koan(""" Boolean Logic:
     The boolean logic is equal to the java language and offers the default behaviour.""") {
     5 > 2 && 'a' != 'b' should be(true)
@@ -66,6 +70,7 @@ class Conditionals extends CodeTaskSuite("Conditionals", 2) {
     !x || "Hello".length >= 4 should be(true)
   }
 
+  video("Operator Precedence", "hF-Kf_zG_G0")
   koan(""" Operator Precedence:
     To know when which part of a calculation or statement is processed first, Scala has 
     a fix precedence which is documentated and listed below:
@@ -88,6 +93,7 @@ class Conditionals extends CodeTaskSuite("Conditionals", 2) {
     3 + 3 < 4 * 2 should be(true)
   }
 
+  video("Nested Ifs", "ZT3zAIQhDE8")
   koan(""" Nested If's:
     If conditionals could be nested as seen below. A certain level of nested is okay but 
     in case of code quality, maintainability and readability it isn't a good practice if 
@@ -106,6 +112,7 @@ class Conditionals extends CodeTaskSuite("Conditionals", 2) {
     price should be(7.5)
   }
 
+  video("Bitwise Arithmetic", "8CpZLfe0Lug")
   koan(""" Bitwise Arithmetic:
     For low level programming and encryption bitwise arithmetic is mandatory.
     It contains basic operations as &,|,^,~ and bitwise shifting""") {
