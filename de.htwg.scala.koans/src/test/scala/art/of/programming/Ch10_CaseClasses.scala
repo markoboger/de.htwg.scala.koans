@@ -4,6 +4,11 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
+  
+  video("Case classes", "V6WHvBerbDw")
+  video("Creating case classes", "4HCFckV5OQ4")
+  video("Using case classes", "oY-vp_vJ3bQ")
+
   koan(""" Case classes (Problemset): 
     The addition of case classes give the ability to enrich tuples with logic and meaning. We already
     mentioned case classes in some chapters but didn't took a closer look.
@@ -54,6 +59,7 @@ class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
     distance(p1, p2) should be(3)
   }
 
+  video("Named and Default Arguments", "TUw9GYpi7bA")
   koan(""" Named and default arguments:
     This feature is like many others in Scala purely for readability. Named and default arguments
     add a nice way of calling functions/methods in a way that you don't need to remember which parameter needs to
@@ -73,6 +79,7 @@ class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
     evalQuadWithDefaults(c = 3, x = 2) should be(3)
   }
 
+  video("The copy Method", "fyx51Z9ejrU")
   koan(""" Copy method:
     Since case classes are immutable you cannot reassign values to a case class (you can make
     case classes mutable with the keyword var infront of every argument. This style is not recommended!
@@ -94,6 +101,8 @@ class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
     b == q should be(true)
   }
 
+  video("Case class patterns", "b_cEmkzGlro")
+  video("Mutable case classes", "RbtQ0WyuJ2M")
   koan(""" Case class pattern matching:
     The most useful case when using case classes is pattern matching. You can apply the known techniques
     from the pattern matching with tuples (using wildcards, using named elements for later use and so on).""") {
@@ -114,6 +123,7 @@ class CaseClasses extends CodeTaskSuite("Case Classes", 9) {
     studentsWithOneClass should be(List(("Jens", List("german"))))
   }
 
+  video("Zipped type", "F4L8QMiJypM")
   koan(""" Zipped Type:
     The zipped type is another performance enhancement feature of Scala in case of instance creation.
     The example below shows this performance boost quite clearly. From the chapter about

@@ -4,6 +4,7 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
+  video("Option Type", "i1cXwWN7Mjk")
   koan(""" Option Type:
     The option type is intended to represent something that may or may not have a value.
     It is used by the type system to help you find certain types of error. E.g. if something
@@ -28,6 +29,7 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     ifResponse should be(20)
   }
 
+  video("Parametric Functions", "nDsvIQqAIIY")
   koan(""" Parametric Functions:
     Parametric functions are function which take types as arguments. In Java those are called Generics. Parametric
     functions are not the same as generics but for a mental model you can treat them as if they were.""") {
@@ -42,6 +44,7 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     makeTuple("Hi", 'a').isInstanceOf[(java.lang.String, Char)] should be(true)
   }
 
+  video("Subtyping", "fxk1P5VU7sI")
   koan(""" Subtyping:
     In Scala everything is a type. In the documentation of Scala each type is a subtype of another type. The main
     types in Scala are AnyVal, AnyRef and Any. Any class you could imagine is a subtype of those types. The compiler has
@@ -52,6 +55,7 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     List().isInstanceOf[List[Nothing]] should be(true)
   }
 
+  video("Variable length argument Lists", "4ur0KE7oYJY")
   koan(""" Variable Argument Lists:
     These are argument lists that do not have a specified length as the name implies.
     In Java this feature was written with String[] args or since Java 6 with String... args. This idenitifed a 
@@ -68,6 +72,8 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     average(list: _*) should be(3.0)
   }
 
+  video("Mutability and Aliasing", "waAztDnnFJg")
+  video("Argument Passing", "XJ3iH6yhXvY")
   koan("""Mutability:
     A big concern when doing concurrent programming is mutability. Scala strives for immutability which eliminates the 
     failure of accidentally changing a value. In the example below you see whats called aliasing. Aliasing is when you 
@@ -88,6 +94,7 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     a should be(Array(0, 0, 0, 0, 0))
   }
 
+  video("Currying", "Vriy8D97kwE")
   koan(""" Currying:
     Opens the possibility to use multiple argument lists. Functions that let you use currying are e.g. fill, tabulate or fold.
     One way of to make use of currying happens when you return a function.
@@ -105,6 +112,7 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     plus6(12) should be(18)
   }
 
+  video("Pass-by-name", "0K2BFqbZiHs")
   koan(""" Pass by Name:
     In addition to the default passing semantic, scala uses or allows pass by name. It is mostly disallowed
     in many other programming languages. When understood and used right it can 
@@ -123,6 +131,7 @@ class TypesAndArguments extends CodeTaskSuite("Types and Arguments", 6) {
     thriceMultiplyAdv({ a += 1; a }) should be(6)
   }
 
+  video("Multidimensional Arrays", "kdyZpPafZOo")
   koan(""" Multidimensional Arrays:
     Like in any other language scala offers the possibility to create multidimensial arrays which is exactly
     what the name implies within arrays. It can be archived with the library methods fill or tabulate.""") {

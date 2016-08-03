@@ -4,6 +4,7 @@ import org.scalatest.Matchers
 import org.codetask.koanlib.CodeTaskSuite
 
 class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
+  video("Buffer Collection", "aQbMRUmsBNY")
   koan(""" Buffer: 
     The idea of a buffer is very similar to arrays. They have a specific order and you can
     get elements by indexing.
@@ -43,6 +44,7 @@ class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
     buf should be(ArrayBuffer(1, 42, 42, 42, 4, 101, 3, 4, 42))
   }
 
+  video("Map Collection", "6v-_jnN807A")
   koan(""" Maps:
     Maps are quite different from other collections. They have parametric polymorphism but they
     are parametric on two different types.  
@@ -83,6 +85,7 @@ class AdvancedCollections extends CodeTaskSuite("Advanced Collections", 12) {
     studentMap.get("Ted") should be(None)
   }
 
+  video("Set Collection", "HO4r3qtka3s")
   koan(""" Sets
     Sets are derived from the mathematical term of Set. Which is a collection of
     elements where duplicates are not allowed and order doesn't matter.
