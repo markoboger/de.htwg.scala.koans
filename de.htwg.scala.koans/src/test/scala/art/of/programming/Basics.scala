@@ -41,7 +41,20 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     'x'.isInstanceOf[Char] should be(true)
     true.isInstanceOf[Boolean] should be(true)
     "Hello".isInstanceOf[String] should be(true)
+  }
+  
+    koan("""Primitive datatype arithmetic:
+    Each primitive datatype has a unique set of arithmetic functions like +,* implemented.
+    These methods can be called by invoking the method on the value of which you'll be invoking
+    the method. The argument on the right side will be used as the argument. 
+    In Scala there is a special case in which you could leave the default method invokation symbol (symbol =  '.' ) 
+    if the is only one arguments on the right side.
     
+    Solve the following values""") {
+    6 + 4 should be(10)  
+    5.6.+(4.4) should be(10.0)
+    5.6 + 4.4 should be(10.0)
+
     'a' + 1 should be('b')
     'd' - 'c' should be(1)
     'a'.toInt should be(97)
@@ -50,6 +63,10 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     "a" + "b" should be("ab")
     "a" + 1 should be("a1")
     "a" * 3 should be("aaa") 
+
+    "Hello " + "World" should be("Hello World")
+    "Hello " + 5.6 should be("Hello 5.6")
+    "Hello " * 3 should be("Hello Hello Hello ")
   }
 
   koan("""Tuple:
@@ -79,63 +96,52 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     ("Hello" -> 42 -> 'a')._1._2 should be(42)
   }
 
-  koan("""Primitive datatype arithmetic:
-    Each primitive datatype has a unique set of arithmetic functions like +,* implemented.
-    These methods can be called by invoking the method on the value of which you'll be invoking
-    the method. The argument on the right side will be used as the argument. 
-    In Scala there is a special case in which you could leave the default method invokation symbol (symbol =  '.' ) 
-    if the is only one arguments on the right side.
-    
-    Solve the following values""") {
-    5.6.+(4.4) should be(10.0)
-    5.6 + 4.4 should be(10.0)
-
-    'a' + 1 should be('b')
-
-    "Hello " + "World" should be("Hello World")
-    "Hello " + 5.6 should be("Hello 5.6")
-    "Hello " * 3 should be("Hello Hello Hello ")
-  }
-
-  video("Additional Integer Types", "dJPxiFFZypU")
-
-  koan("""Casting:
-    Like in every programming language you can cast a given value with a certain type
-    to a similiar type. For example double to int. In Scala each primitive datatype has a
-    method for each other datatype.
-    """) {
-    5.6.toInt should be(5)
-
-    42.5.toInt should be(42)
-  }
 
   video("Details of numbers", "2dImF4DCWlY")
-
-  koan("""Type Limits:
+  
+   koan("""Binary Numbers:
+    Decimal numbers can be converted into binary numbers and vice versa.
+    """) {
+    42.toBinaryString should be("101010")
+  }
+  
+  video("Additional Integer Types", "dJPxiFFZypU")
+  
+    koan("""Type Limits:
     Types have a certain amount of bytes reserved for their value. Due to this restriction 
     there is a chance to get overflows during runtime.
+    """) {
     
-    Solve the right value for the following statements""") {
-    1000000000 + 1000000000 should be(2000000000)
-    2000000000 + 2000000000 should be(-294967296)
-
     Int.MaxValue should be(2147483647)
     Int.MinValue should be(-2147483648)
+    Int.MaxValue + 1 should be(-2147483648)
+    
+    Byte.MaxValue should be(127)
+    
+    Short.MaxValue should be(32767)
+    
+    1000000000 + 1000000000 should be(2000000000)
+    2000000000 + 2000000000 should be(-294967296)
+    
+    2000000000L + 2000000000L should be(4000000000L)
 
-    Char.MaxValue.toInt should be(65535)
     Char.MinValue.toInt should be(0)
+    Char.MaxValue.toInt should be(65535)
+
   }
 
   video("Binary Arithmetic and presentation", "212jDl_5B7E")
   video("Signed and unsigned values", "qTAw30GgDZs")
 
-  koan("""Value presentation:
+  koan("""Value presentation in other representations:
     
     """) {
     42.toBinaryString should be("101010")
+    -42.toBinaryString should be("11111111111111111111111111010110")   
+    
     42.toOctalString should be("52")
     42.toHexString should be("2a")
-    -42.toBinaryString should be("11111111111111111111111111010110")
+
   }
 
   video("Floating point numbers and math libary", "LrU7mLiTWKo")
@@ -150,8 +156,9 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     scala.math.sqrt(9) should be(3.0)
   }
 
-  video("Mental model of variables", "TLfRT5Ab7d0")
+ 
   video("Values and Variables", "xJNb8UhrMcY")
+  
 
   koan(""" Variables and Pattern matching:
     There are two variable concepts in Scala, Val and Var. Val declares a constant/immutable variable.
@@ -173,6 +180,8 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     firstName should be("Max")
     lastName should be("Mustermann")
   }
+  
+  video("Mental model of variables", "TLfRT5Ab7d0")
 
   video("Details of Strings and Chars", "hkPwD4HUK_0")
 
@@ -191,16 +200,15 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
 
     a + " " + b + " " + c should be("5 10 x")
     s"$a $b $c" should be("5 10 x")
+    """s"$a $b $c" """ should be("""s"$a $b $c" """)
     s"${a + 5} $b $c" should be("10 10 x")
   }
 
   video("Basic string methods", "DDlVziE243A")
-  video("Immutability of Strings", "jZOg0P8-26E")
-  video("Sequential Execution and string example", "ReS2nusS7R8")
 
   koan(""" String Methods:
-    Due to the fact that Scala is using the String implementation of Java all methods are the same.
-    If you're familiar with Java and the String Class then you know them already.""") {
+    Due to the fact that Scala is using the String implementation of Java all methods of Java Strings are availble.
+    If you're familiar with Java and the String Class then you know most of them already. But there are additional methods like splitAt.""") {
     val name = "Max"
     name.length should be(3)
 
@@ -219,4 +227,8 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     "Max".toUpperCase should be("MAX")
     "Max".toLowerCase should be("max")
   }
+  
+  video("Immutability of Strings", "jZOg0P8-26E")
+  video("Sequential Execution and string example", "ReS2nusS7R8")
+
 }
