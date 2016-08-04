@@ -94,9 +94,10 @@ class Ch06_Recursion extends CodeTaskSuite("Recursion", 4) {
           case (_, 0) => "Buzz"
           case (_, _) => x.toString()
         }
-        fizzBuzz(x + 1)
       }
+      else "Number too large"
       //endsolve
+    }
       
       //test
       fizzBuzz(12) should be("Fizz")
@@ -105,7 +106,6 @@ class Ch06_Recursion extends CodeTaskSuite("Recursion", 4) {
       fizzBuzz(13) should be("13")
       
       //endtest
-    }
   }
 
   video("Try/catch statements", "XlAA6jfy82o")
