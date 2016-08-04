@@ -62,9 +62,11 @@ class Ch07_ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
       //endsolve
     }
 
-    val arr = Array(1, 2, 3, 4)
+    val arr1 = Array(1, 2, 3)
+    operateOnArray(arr1, 0, _ + _) should be(6)
     //test
-    operateOnArray(arr, 0, _ + _) should be(10)
+    val arr2 = Array(1, 2, 3, 4)
+    operateOnArray(arr2, 0, _ + _) should be(10)
     //endtest
   }
 
