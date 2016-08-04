@@ -1,8 +1,14 @@
-package art.uncomplete
+package art.of.programming
 
 import org.codetask.koanlib.CodeTaskSuite
 
-class Recursion extends CodeTaskSuite("Recursion", 4) {
+class Ch06_Recursion extends CodeTaskSuite("Recursion", 4) {
+  
+  video("Basic idea behind recursion", "qeh2bbPqKaI")
+  video("Recursion in Scala", "mIi5M_QiVXs")
+  video("Additional Recursive functions", "YEVyoXa35e8")
+  video("Tracing recursive functions", "3xO1F2Jj5kg")
+  video("Tracing by substitution", "sl4H7PhUSWk")
   koan(""" Recursive Functions:
     Recursive calling of functions within the body of this method is as simple as in other languages. Recursive function must have a return
     value. 
@@ -32,6 +38,8 @@ class Recursion extends CodeTaskSuite("Recursion", 4) {
     factorial(5) should be(120)
   }
 
+  video("The match expression", "jemq2R67Wvw")
+  video("Options for a match expression", "7bkOO6wKqUY")
   koan(""" Match Expression:
     A match expression could be described in a vaque way as a switch pattern like in java but way more powerful. It uses the build-in 
     pattern matching mechanism, which allows to match a given set of data with predefined matches.    
@@ -69,6 +77,7 @@ class Recursion extends CodeTaskSuite("Recursion", 4) {
     surnameResponse should be(0)
   }
 
+  video("Recursive Fizz Buzz", "5sryc6JUe6M")
   codetask(""" Exercise: (Recursive FizzBuzz)
     Write a recursive function which calculates the Fizz Buzz Game for the first 100 integers.
     FizzBuzz is a simple game in which you:
@@ -88,9 +97,17 @@ class Recursion extends CodeTaskSuite("Recursion", 4) {
         fizzBuzz(x + 1)
       }
       //endsolve
+      
+      //test
+      fizzBuzz(12) should be("Fizz")
+      fizzBuzz(20) should be("Buzz")
+      fizzBuzz(15) should be("FizzBuzz")
+      
+      //endtest
     }
   }
 
+  video("Try/catch statements", "XlAA6jfy82o")
   koan(""" Exception handling:
     Like in Java, Scala offers a way to handle exceptions. The try/catch expression uses pattern matching like the match expression.
     With this you can easily match the exception and handle it the right way. The possibility of using a wildcard in a try/catch isn't
