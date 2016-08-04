@@ -85,14 +85,14 @@ class Ch06_Recursion extends CodeTaskSuite("Recursion", 4) {
     Shout Fizz when the number is divideable by 3,
     Shout Buzz when the number is divideable by 5,
     and FizzBuzz when both, otherwise shout the current number.""") {
-    def fizzBuzz(x: Int): Unit = {
+    def fizzBuzz(x: Int): String = {
       //solve
       if (x <= 100) {
         (x % 3, x % 5) match {
-          case (0, 0) => println("FizzBuzz")
-          case (0, _) => println("Fizz")
-          case (_, 0) => println("Buzz")
-          case (_, _) => println(x)
+          case (0, 0) => "FizzBuzz"
+          case (0, _) => "Fizz"
+          case (_, 0) => "Buzz"
+          case (_, _) => x.toString()
         }
         fizzBuzz(x + 1)
       }
@@ -102,6 +102,7 @@ class Ch06_Recursion extends CodeTaskSuite("Recursion", 4) {
       fizzBuzz(12) should be("Fizz")
       fizzBuzz(20) should be("Buzz")
       fizzBuzz(15) should be("FizzBuzz")
+      fizzBuzz(13) should be("13")
       
       //endtest
     }
