@@ -1,8 +1,11 @@
-package art.uncomplete
+package art.of.programming
 
 import org.codetask.koanlib.CodeTaskSuite
 
-class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
+class Ch07_ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
+  
+  video("Array Basics", "J8WWeQMD5jg")
+  video("List Basics", "RYyaskHb8C8")
   koan(""" Basics of Array and List:
     Basic collections like arrays and lists are available from the get-go. Known from Java the collections
     have distinct behaviour. In Scala these two collections have a way bigger distinction. Due to functional programming
@@ -23,26 +26,28 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     1 :: 2 :: 3 :: Nil should be(List(1, 2, 3))
   }
 
+  video("Recursive fill function for Arrays", "PrVj8CBgK5o")
   codetask("""Exercise: (Recursive Array filling)
-    Write a function which fills an Array recursivly with the knowledge you gathered from this chapter.
-    
-    Note: The method has an Unit return type.""") {
-    def fillArray(arr: Array[Int], value: Int, i: Int): Unit = {
+    Write a function which fills an Array with a given number recursivly with the knowledge you gathered from this chapter.
+    """) {
+    def fillArray(array: Array[Int], value: Int, i: Int): Unit = {
       //solve
-      if (i < arr.length) {
-        arr(i) = value
-        fillArray(arr, value, i + 1)
+      if (i < array.length) {
+        array(i) = value
+        fillArray(array, value, i + 1)
       }
       //endsolve
     }
 
-    val arr = Array(1, 1, 1, 1)
-    fillArray(arr, 0, 0)
     //test
-    arr should be(Array(0, 0, 0, 0))
+    val array = Array(1, 1, 1, 1)
+    fillArray(array, 0, 0)
+   
+    array should be(Array(0, 0, 0, 0))
     //endtest
   }
 
+  video("Applying higher order functions", "5PlT3AumYgg")
   codetask(""" Exercise: (Operate on array with higher order methods)
     Write a function which adds up all elements recursivly with the use of a higher function (lambda literal).
     
@@ -86,6 +91,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     lst.last should be(5)
   }
 
+  video("List functions", "v_AofFV8tCU")
   codetask(""" Exercise: (Recursive summation of elements)
    Write a function which adds up all elements recursivly with the use of a higher function (lambda literal).
     
@@ -103,6 +109,8 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     //endtest
   }
 
+  video("Scala library fill method", "El1vc04cUto")
+  video("Scala library tabulate method", "wNn-TvgH6M8")
   koan(""" Fill/Tabulate Method:
     For quickly setting up an Array or List Scala provides a method for this for each collection""") {
     Array.fill(10)(math.random).size should be(10)
@@ -130,6 +138,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     //endtest
   }
 
+  video("Collection methods - Data Access", "iNTFdp0uhHM")
   koan(""" Collection Methods: Data Access
     Arrays and Lists offer plenty of methods to access the data in itself.
     
@@ -148,6 +157,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     a.takeRight(3) should be(Array(1, 2, 3))
   }
 
+  video("Collection methods - Information Gain ", "_I7L2A5F_Iw")
   koan(""" Collection Methods: Information Gain 
     The examples below show these methods on the array collection. It is identical with
     the list collection.
@@ -166,6 +176,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     a.indexOf(1, 3) should be(3)
   }
 
+  video("Collection Methods - Miscellaneous", "7LN9hyUbcJ8")
   koan(""" Collection Methods: Miscellaneous
     The examples below show these methods on the array collection. It is identical with
     the list collection.
@@ -214,6 +225,8 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     fillList(5, { i += 1.0; i }) should be(List(1.0, 1.0, 1.0, 1.0, 1.0))
   }
 
+  video("Higher order methods - map and filter", "fkepwLhK86I")
+  video("Higher order methods in general", "6ChKZeffV_4")
   koan(""" Higher Functions:
     By default Scala offers a set of higher functions like map, filter, reduce, partition and so on.
     With these methods you can achieve a similar behaviour as with loops. In a later chapter these methods are 
@@ -245,6 +258,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     b.dropWhile(_ < 3) should be(Array(3))
   }
 
+  video("Reduce and fold", "bnOTEfNEQzw")
   koan(""" Reduce and fold:
     Those methods come in handy when you are trying to applying a certain function or operation on elements in a dataset.
     
@@ -271,6 +285,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     a.foldLeft("")(_ + _) should be("5293")
   }
 
+  video("Combinatorial iterator methods", "-SsecWc0ohI")
   koan(""" Combinatorial functions:
     The possibility to do combinatorial, permutations and sliding within Scala you just call the responsible function. 
     Each function delivers an Iterator. Through simple iteration functions like next() and hasNext() you can iterate
@@ -288,6 +303,7 @@ class ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
 //    a.sliding(3).toArray should be(Array(Array(1, 2), Array(2, 3)))
   }
 
+  video("Strings as Collections", "9KyvF-8UmSw")
   koan(""" Collection String:
     Strings are a special collection within Scala. Every function which were applied to lists or arrays could be
     invoked on a string. E.g. indexing, map, count and so on.""") {
