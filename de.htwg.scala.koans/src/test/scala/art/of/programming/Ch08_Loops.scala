@@ -1,9 +1,11 @@
-package art.uncomplete
+package art.of.programming
 
 import org.codetask.koanlib.CodeTaskSuite
 import scala.Vector
 
-class Loops extends CodeTaskSuite("Loops", 7) {
+class Ch08_Loops extends CodeTaskSuite("Loops", 7) {
+
+  video("The while loop", "nIGiaEf1hW8")
   koan(""" While loop:
     Instead of using recursion or higher order methods, scala gives you the ability to write a loop
     which you can use to iterate over something. The while loop is a lesser used form of loop. 
@@ -18,6 +20,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     sum should be(10)
   }
 
+  video("The do-while Loop", "h3SIkYx8Ljw")
   koan(""" Do while loop:
     The do while loop is similar to the while loop. The only distinction from the while loop is that 
     the loop will execute once at minimum because of the trailing conditional. The do while loop is the
@@ -31,6 +34,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     sum should be(10)
   }
 
+  video("Ranges", "lfKCoV-O2SA")
   koan(""" Ranges: 
     Commonly used forms of loops create a variable which will be incremented/decremented till it surpasses
     a certain bar, limit or something else. For this general occuring event, scala introduced something called 
@@ -48,14 +52,28 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     (3 to 1 by -1).toString should be("Range(3, 2, 1)")
   }
 
+  video("The for loop", "NNG6Bl8pLMQ")
   codetask(""" Exercise: (Simple for loop)
-    Write a simple for loop that prints each element of the supported array.""") {
+    Write a simple for loop that sums up each element of the provided array.""") {
     val a = Array(1, 2, 3, 4, 5)
-    //solve
-    for (i <- a) println(i)
-    //endsolve
+    
+    def sum(a:Array[Int]):Int = {
+      //solve
+      var sum = 0
+      for (i <- a.indices) {
+        sum = sum + a(i) 
+      }
+      sum
+      //endsolve
+    }
+    
+    //test
+    sum(a) should be(15)
+
+    //endtest
   }
 
+  video("Loop examples - Evaluate Polynoms", "6v3y9jH0wHw")
   koan(""" For loop: 
     The main form of loop is the for loop. They are less error prone then while loops within doing the same work.
     For loops can be structured with using Ranges as seen in the example below. Moreover the example below shows
@@ -84,6 +102,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     evalPolynomBetter(a, 2.0) should be(11.0)
   }
 
+  video("Yield", "zFHCdFV3ok4")
   koan(""" Yield:
     Till this point we used for loops as statements not expressions. For this exact moment Scala introduced 
     the keyword yield. In previous examples we had to write several var declarations to make things work.
@@ -100,6 +119,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     evalPolyBest(a, 3.0) should be(28.0)
   }
 
+  video("If guards", "hEfwLier84U")
   koan(""" Yield If Guards:
     In addition to conditionals seen in the chapter about conditionals you can use if guards in loops. 
     This could be done especially when applying the yield to the for loop.
@@ -112,6 +132,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     rightResponse should be(Vector(4, 16, 36, 64, 100))
   }
 
+  video("Multiple Generators", "WseHLd1cxIs")
   koan(""" Multiple generators: 
     Multiple generators could be described as a nested loop. With adding additional ranges into the 
     for loop you gain the ability to create or run multidimensional collections.""") {
@@ -122,20 +143,24 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     responseWithProduct should be(Vector((1, 1, 1), (1, 2, 2), (2, 1, 2), (2, 2, 4)))
   }
 
+  video("Patterns in for Loops", "K7K9E7uw-lg")
   codetask(""" Exercise: (Pattern matching with yield)
     Write a statement which uses Pattern matching, for loop and yield to concatenate the elements of a given two tuple with the 
     String ("_"). The result should an array with the concatenated names.""") {
     val lst = List(("Max", "Mustermann"), ("Hans", "Werner"), ("Klaus", "Mann"))
-
+    
+    def combineNames( list:List[(String, String)]):List[String] = {
     //solve
-    val response = for ((firstname, lastname) <- lst) yield firstname + "_" + lastname
+       for ((firstname, lastname) <- lst) yield firstname + "_" + lastname
     //endsolve
+    }
 
     //test
-    response should be(List("Max_Mustermann", "Hans_Werner", "Klaus_Mann"))
+    combineNames(lst) should be(List("Max_Mustermann", "Hans_Werner", "Klaus_Mann"))
     //endtest
   }
 
+  video("Variable declarations", "PqoUrkvhqIo")
   koan(""" Variable declaration in for loops:
     Another benefit for the for loop construct is that you can declare variables into the loop header. This benefits the readability
     and maintainability of the codebase.""") {
@@ -146,6 +171,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     findMax should be(Vector(2, 1, 0, 2, 1, 1, 2, 2, 2))
   }
 
+  video("For comprehension", "r86DvO_wsZ0")
   koan(""" For Comprehension:
     The for loop as we know isn't a real for loop in a sense that we know from other languages.
     In Scala the for loop is internally constructed with higher order methods like map, filter, reduce and foreach. 
@@ -162,6 +188,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     (1 to 10).filter(_ % 2 == 0).map(i => i * i) should be(Vector(4, 16, 36, 64, 100))
   }
 
+  video("Multidimensional for loops", "3OgZ1hMEYTg")
   koan(""" Multidimensial loop: 
     Besides mutliple generators you can also construct loops with explicit nesting of for loops as seen in the example 
     below.""") {
@@ -172,6 +199,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     response should be(Vector(Vector(1, 2, 3), Vector(2, 4, 6), Vector(3, 6, 9)))
   }
 
+  video("Parallel for loops", "in1pyU-kb-Y")
   koan(""" Parallel for loops:
     Due to default technologie standards these days every computer has at least two cores. To make use of these ressources,
     programs have to be written for parallel or concurrent execution. In Scala this is easily archived by calling the method
@@ -184,6 +212,7 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     i == 1000000000 should be(false)
   }
 
+  video("Views", "4h6F-I0Zs0M")
   koan(""" Views:
     Views are an performance enhancement feature given by Scala. Each time higher order methods like map, filter or reduce are called scala will create
     a completly new collection. If you do this multiple times you will consume a lot of memory each time. The view concept encapsulates the collection with
@@ -193,6 +222,6 @@ class Loops extends CodeTaskSuite("Loops", 7) {
     val numbers = Array.fill(100)(Math.random)
     numbers.isInstanceOf[Array[Double]] should be(true)
     numbers.map(x => x * x).filter(_ < 0.25).isInstanceOf[Array[Double]] should be(true)
-    numbers.view.map(x => x * x).filter(_ < 0.25).isInstanceOf[scala.collection.SeqView[Double,Array[Double]]] should be(true)
+    numbers.view.map(x => x * x).filter(_ < 0.25).isInstanceOf[scala.collection.SeqView[Double, Array[Double]]] should be(true)
   }
 }
