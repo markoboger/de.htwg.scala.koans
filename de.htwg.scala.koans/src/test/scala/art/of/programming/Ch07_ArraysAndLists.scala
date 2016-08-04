@@ -69,17 +69,17 @@ class Ch07_ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
   }
 
   codetask(""" Exercise: (Appending elements to a list)
-  Write a function which appends integers to a list. 
-  
-  Note: The values to append are entered by the user (using io.StdIn.readInt)""") {
-    import io.StdIn._
-
-    def inputList(n: Int): List[Int] = {
+  Write a function which appends the first n natural numbers recursively to a list in reverse order. 
+  """) {
+    def append(n: Int, list:List[Int]): List[Int] = {
       //solve
       if (n < 1) Nil
-      else readInt :: inputList(n - 1)
+      else n :: append(n - 1,list)
       //endsolve
     }
+    //test
+      append(5,Nil) should be(5::4::3::2::1::Nil)
+    //endtest
   }
 
   koan(""" List Functions:
