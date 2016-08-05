@@ -79,6 +79,8 @@ class Ch07_ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
       else n :: append(n - 1,list)
       //endsolve
     }
+    
+    append(3,Nil) should be(3::2::1::Nil)
     //test
       append(5,Nil) should be(5::4::3::2::1::Nil)
     //endtest
@@ -135,8 +137,10 @@ class Ch07_ArraysAndLists extends CodeTaskSuite("Arrays and Lists", 5) {
     }
 
     val lst = fillList(3, 2.0)
-    //test
     lst should be(List(2.0, 2.0, 2.0))
+    //test
+    val lst2 = fillList(4, 3.0)
+    lst2 should be(List(3.0, 3.0, 3.0, 3.0))
     //endtest
   }
 
