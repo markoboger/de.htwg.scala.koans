@@ -131,19 +131,23 @@ class Ch16_BasicObjectOrientation extends CodeTaskSuite("Basic Object Orientatio
   codetask(""" Exercise: (Object implementation)
     Write an object (named TestObject) which increments a member variable by 1. The starting value of the 
     member variable should be 0.""") {
-    //solve
+    
     object TestObject {
+      //solve
       var i = 0
       def increment {
         i += 1
       }
+      //endsolve
     }
-    //endsolve
 
-    //test
     TestObject.i should be(0)
     TestObject.increment
     TestObject.i should be(1)
+    //test
+    TestObject.i should be(1)
+    TestObject.increment
+    TestObject.i should be(2)
     //endtest
   }
 
