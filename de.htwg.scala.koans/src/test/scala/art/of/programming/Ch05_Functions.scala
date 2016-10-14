@@ -29,7 +29,7 @@ class Ch05_Functions extends CodeTaskSuite("Functions", 3) {
     In special cases you could use the buildin wildcard feature (s. last statement).
     Lambda literals can also be called as anonymous functions""") {
     val square = (x: Double) => x * x
-    square(3) should be(9)
+    square(3) should be(9.0)
 
     val add = (x: Double, y: Double) => x + y
     add(3, 4) should be(7)
