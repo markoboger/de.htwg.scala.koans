@@ -32,10 +32,10 @@ class Ch05_Functions extends CodeTaskSuite("Functions", 3) {
     square(3) should be(9.0)
 
     val add = (x: Double, y: Double) => x + y
-    add(3, 4) should be(7)
+    add(3, 4) should be(7.0)
 
     val func = (_: Double) * 2
-    func(25) should be(50)
+    func(25) should be(50.0)
   }
 
   video("Higher order functions", "D8o96hXjBBs")
