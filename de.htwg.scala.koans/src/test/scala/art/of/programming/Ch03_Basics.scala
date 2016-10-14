@@ -55,7 +55,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     5.6.+(4.4) should be(10.0)
     5.6 + 4.4 should be(10.0)
 
-    'a' + 1 should be('b')
+    'a' + 1 should be(98)
     'd' - 'c' should be(1)
     'a'.toInt should be(97)
     98.toChar should be('b')
@@ -92,7 +92,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     ("Hello", 42)._2 should be(42)
     ("Hello" -> 42 -> 'a')._2 should be('a')
 
-    ("Hello" -> 42 -> 'a')._1 should be("Hello" -> 42)
+    ("Hello" -> 42 -> 'a')._1 should be((Hello, 42))
     ("Hello" -> 42 -> 'a')._1._2 should be(42)
   }
 
@@ -200,7 +200,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
 
     a + " " + b + " " + c should be("5 10 x")
     s"$a $b $c" should be("5 10 x")
-    """s"$a $b $c" """ should be("""s"$a $b $c" """)
+    """s"$a $b $c" """ should be("s"$a $b $c" ")
     s"${a + 5} $b $c" should be("10 10 x")
   }
 
@@ -221,7 +221,7 @@ Here you need to fill in a few lines of code to pass a test. Let's get started: 
     fullName.substring(4) should be("Mustermann")
     fullName.substring(4, 10) should be("Muster")
 
-    fullName.splitAt(4) should be(("Max ", "Mustermann"))
+    fullName.splitAt(4) should be(("Max ", Mustermann))
 
     "Max ".trim should be("Max")
     "Max".toUpperCase should be("MAX")
