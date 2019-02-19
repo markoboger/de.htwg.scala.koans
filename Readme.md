@@ -1,1 +1,2 @@
-Test v0.0.7
+Test v0.0.8
+Test newline
