@@ -4,7 +4,7 @@ import org.codetask.koanlib.CodeTaskSuite
 import spire.math._
 import spire.implicits._
 
-class ComplexNumbers extends CodeTaskSuite("Complex Numbers",1) {
+class ComplexNumbers extends CodeTaskSuite("Complex Number",1) {
 
   koan("The Scala library Spire provides a type for complex numbers. They consist of a real and an imaginary part. ") {
     val ci1 = Complex(2, 1)
