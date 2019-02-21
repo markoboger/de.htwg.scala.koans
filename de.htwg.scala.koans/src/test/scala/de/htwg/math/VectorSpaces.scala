@@ -4,7 +4,7 @@ import org.codetask.koanlib.CodeTaskSuite
 import spire.math._
 import spire.implicits._
 
-class VectorSpaces extends CodeTaskSuite("Vector Spaces", 2) {
+class VectorSpaces extends CodeTaskSuite("Vector Space", 2) {
   
   koan("The Scala library Spire provides a type for Vector. It allows operations like addition and scalar product") {
     	val v1 = Vector(1,5,3) + Vector(2,1,-5) 
