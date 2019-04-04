@@ -19,7 +19,7 @@ class Ex11_Maps extends CodeTaskSuite("Maps", 11) {
 
     val aNewMap = myMap + ("IL" -> "Illinois")
 
-    aNewMap.contains("IL") should be(true)
+    aNewMap.contains("ILs") should be(false)
   }
 
   koan("Map values can be iterated") {
